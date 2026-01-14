@@ -11,7 +11,9 @@ import {
   AlertTriangle
 } from 'lucide-astro';
 
-const base = import.meta.env.BASE_URL;
+// Ensure base always ends with a slash
+const baseUrl = import.meta.env.BASE_URL;
+const base = baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`;
 
 const benefits = [
   'Verlängerung der Tanklebensdauer',

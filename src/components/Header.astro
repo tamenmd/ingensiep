@@ -2,10 +2,12 @@
 import Logo from './Logo.astro';
 import { Phone, Menu, X } from 'lucide-astro';
 
-const base = import.meta.env.BASE_URL;
+// Ensure base always ends with a slash
+const baseUrl = import.meta.env.BASE_URL;
+const base = baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`;
 
 const navItems = [
-  { href: `${base}`, label: 'Home' },
+  { href: base, label: 'Home' },
   { href: `${base}leistungen`, label: 'Leistungen' },
   { href: `${base}kontakt`, label: 'Kontakt' },
 ];
@@ -20,8 +22,8 @@ const currentPath = Astro.url.pathname;
       <a href={base} class="flex items-center gap-3 group">
         <Logo class="text-primary transition-transform group-hover:scale-105" width="48" height="48" />
         <div class="hidden sm:block">
-          <span class="text-xl font-bold text-dark">IS-Tankschutz</span>
-          <span class="block text-xs text-dark-400">Ihr Fachbetrieb für Tankanlagen</span>
+          <span class="text-xl font-bold text-dark font-serif tracking-wide">INGENSIEP & SCHALLENBERG</span>
+          <span class="block text-xs text-dark-400">Fachbetrieb für Sicherheit und Umweltschutz rund um Ihren Tank.</span>
         </div>
       </a>
 
