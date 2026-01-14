@@ -18,42 +18,44 @@ import {
   Calendar
 } from 'lucide-astro';
 
+const base = import.meta.env.BASE_URL;
+
 const services = [
   {
     icon: Droplets,
     title: 'Tankreinigung',
     description: 'Professionelle Reinigung Ihrer Heizöltanks mit modernster Absaugtechnik für maximale Sicherheit.',
-    href: '/leistungen/tankreinigung'
+    href: `${base}leistungen/tankreinigung`
   },
   {
     icon: Wrench,
     title: 'Tanksanierung',
     description: 'Fachgerechte Innenbeschichtung und Sanierung beschädigter Tankanlagen nach WHG-Vorgaben.',
-    href: '/leistungen/tanksanierung'
+    href: `${base}leistungen/tanksanierung`
   },
   {
     icon: Trash2,
     title: 'Tankdemontage',
     description: 'Sichere Demontage und umweltgerechte Entsorgung alter Öltanks durch zertifizierte Fachkräfte.',
-    href: '/leistungen/tankdemontage'
+    href: `${base}leistungen/tankdemontage`
   },
   {
     icon: PauseCircle,
     title: 'Tankstilllegung',
     description: 'Ordnungsgemäße Stilllegung nicht mehr benötigter Tankanlagen nach behördlichen Vorschriften.',
-    href: '/leistungen/tankstilllegung'
+    href: `${base}leistungen/tankstilllegung`
   },
   {
     icon: PlusCircle,
     title: 'Tankneubau',
     description: 'Planung und Installation neuer Tankanlagen mit modernster Technik und maximaler Effizienz.',
-    href: '/leistungen/tankneubau'
+    href: `${base}leistungen/tankneubau`
   },
   {
     icon: Settings,
     title: 'LAG-Wartung',
     description: 'Regelmäßige Wartung und Prüfung Ihrer Leckschutzauskleidung für dauerhaften Schutz.',
-    href: '/leistungen/lag-wartung'
+    href: `${base}leistungen/lag-wartung`
   }
 ];
 
@@ -123,7 +125,7 @@ const regions = [
 
           <div class="flex flex-col sm:flex-row gap-4 mb-12">
             <a
-              href="/kontakt"
+              href={`${base}kontakt`}
               class="inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all hover:shadow-xl hover:shadow-primary/25 hover:-translate-y-0.5"
             >
               Angebot anfordern
@@ -351,7 +353,7 @@ const regions = [
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a
-          href="/kontakt"
+          href={`${base}kontakt`}
           class="inline-flex items-center justify-center gap-2 bg-white hover:bg-gray-100 text-primary px-8 py-4 rounded-lg font-semibold text-lg transition-all hover:shadow-xl"
         >
           Jetzt Angebot anfordern

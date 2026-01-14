@@ -10,6 +10,8 @@ import {
   Wrench
 } from 'lucide-astro';
 
+const base = import.meta.env.BASE_URL;
+
 const benefits = [
   'Individuelle Bedarfsanalyse',
   'Modernste Tanktechnologie',
@@ -69,7 +71,7 @@ const tankTypes = [
       <div class="grid lg:grid-cols-2 gap-12 items-center">
         <div>
           <div class="flex items-center gap-2 text-primary mb-4">
-            <a href="/leistungen" class="hover:underline">Leistungen</a>
+            <a href={`${base}leistungen`} class="hover:underline">Leistungen</a>
             <span>/</span>
             <span>Tankneubau</span>
           </div>
@@ -83,7 +85,7 @@ const tankTypes = [
           </p>
           <div class="flex flex-col sm:flex-row gap-4">
             <a
-              href="/kontakt"
+              href={`${base}kontakt`}
               class="inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-700 text-white px-8 py-4 rounded-lg font-semibold transition-all"
             >
               Beratung anfordern
@@ -223,7 +225,7 @@ const tankTypes = [
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a
-          href="/kontakt"
+          href={`${base}kontakt`}
           class="inline-flex items-center justify-center gap-2 bg-white hover:bg-gray-100 text-primary px-8 py-4 rounded-lg font-semibold text-lg transition-all"
         >
           Beratung anfordern

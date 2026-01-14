@@ -9,6 +9,8 @@ import {
   MessageSquare
 } from 'lucide-astro';
 
+const base = import.meta.env.BASE_URL;
+
 const services = [
   { value: 'tankreinigung', label: 'Tankreinigung' },
   { value: 'tanksanierung', label: 'Tanksanierung' },
@@ -226,7 +228,7 @@ const services = [
                   class="mt-1 w-4 h-4 text-primary border-gray-300 rounded focus:ring-primary"
                 />
                 <label for="privacy" class="text-sm text-dark-500">
-                  Ich habe die <a href="/datenschutz" class="text-primary hover:underline">Datenschutzerklärung</a> gelesen und bin mit der Verarbeitung meiner Daten einverstanden. *
+                  Ich habe die <a href={`${base}datenschutz`} class="text-primary hover:underline">Datenschutzerklärung</a> gelesen und bin mit der Verarbeitung meiner Daten einverstanden. *
                 </label>
               </div>
 

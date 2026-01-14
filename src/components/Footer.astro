@@ -1,6 +1,8 @@
 ---
 import Logo from './Logo.astro';
 import { Phone, Mail, MapPin, Clock } from 'lucide-astro';
+
+const base = import.meta.env.BASE_URL;
 ---
 
 <footer class="bg-dark-950 text-white">
@@ -8,7 +10,7 @@ import { Phone, Mail, MapPin, Clock } from 'lucide-astro';
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
       <!-- Unternehmen -->
       <div>
-        <a href="/" class="flex items-center gap-3 mb-6">
+        <a href={base} class="flex items-center gap-3 mb-6">
           <Logo class="text-primary" width="40" height="40" />
           <span class="text-lg font-bold">IS-Tankschutz</span>
         </a>
@@ -21,12 +23,12 @@ import { Phone, Mail, MapPin, Clock } from 'lucide-astro';
       <div>
         <h3 class="text-sm font-semibold uppercase tracking-wider mb-6">Leistungen</h3>
         <ul class="space-y-3">
-          <li><a href="/leistungen/tankreinigung" class="text-dark-300 hover:text-primary transition-colors text-sm">Tankreinigung</a></li>
-          <li><a href="/leistungen/tanksanierung" class="text-dark-300 hover:text-primary transition-colors text-sm">Tanksanierung</a></li>
-          <li><a href="/leistungen/tankdemontage" class="text-dark-300 hover:text-primary transition-colors text-sm">Tankdemontage</a></li>
-          <li><a href="/leistungen/tankstilllegung" class="text-dark-300 hover:text-primary transition-colors text-sm">Tankstilllegung</a></li>
-          <li><a href="/leistungen/tankneubau" class="text-dark-300 hover:text-primary transition-colors text-sm">Tankneubau</a></li>
-          <li><a href="/leistungen/lag-wartung" class="text-dark-300 hover:text-primary transition-colors text-sm">LAG-Wartung</a></li>
+          <li><a href={`${base}leistungen/tankreinigung`} class="text-dark-300 hover:text-primary transition-colors text-sm">Tankreinigung</a></li>
+          <li><a href={`${base}leistungen/tanksanierung`} class="text-dark-300 hover:text-primary transition-colors text-sm">Tanksanierung</a></li>
+          <li><a href={`${base}leistungen/tankdemontage`} class="text-dark-300 hover:text-primary transition-colors text-sm">Tankdemontage</a></li>
+          <li><a href={`${base}leistungen/tankstilllegung`} class="text-dark-300 hover:text-primary transition-colors text-sm">Tankstilllegung</a></li>
+          <li><a href={`${base}leistungen/tankneubau`} class="text-dark-300 hover:text-primary transition-colors text-sm">Tankneubau</a></li>
+          <li><a href={`${base}leistungen/lag-wartung`} class="text-dark-300 hover:text-primary transition-colors text-sm">LAG-Wartung</a></li>
         </ul>
       </div>
 
@@ -88,8 +90,8 @@ import { Phone, Mail, MapPin, Clock } from 'lucide-astro';
           © {new Date().getFullYear()} IS-Tankschutz. Alle Rechte vorbehalten.
         </p>
         <div class="flex items-center gap-6">
-          <a href="/impressum" class="text-dark-400 hover:text-primary transition-colors text-sm">Impressum</a>
-          <a href="/datenschutz" class="text-dark-400 hover:text-primary transition-colors text-sm">Datenschutz</a>
+          <a href={`${base}impressum`} class="text-dark-400 hover:text-primary transition-colors text-sm">Impressum</a>
+          <a href={`${base}datenschutz`} class="text-dark-400 hover:text-primary transition-colors text-sm">Datenschutz</a>
         </div>
       </div>
     </div>
