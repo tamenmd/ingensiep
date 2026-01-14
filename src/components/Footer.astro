@@ -1,0 +1,97 @@
+---
+import Logo from './Logo.astro';
+import { Phone, Mail, MapPin, Clock } from 'lucide-astro';
+---
+
+<footer class="bg-dark-950 text-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+      <!-- Unternehmen -->
+      <div>
+        <a href="/" class="flex items-center gap-3 mb-6">
+          <Logo class="text-primary" width="40" height="40" />
+          <span class="text-lg font-bold">IS-Tankschutz</span>
+        </a>
+        <p class="text-dark-300 text-sm leading-relaxed">
+          Ihr zertifizierter Fachbetrieb für Tankreinigung, Tanksanierung und Tankdemontage im Großraum Krefeld und Umgebung.
+        </p>
+      </div>
+
+      <!-- Leistungen -->
+      <div>
+        <h3 class="text-sm font-semibold uppercase tracking-wider mb-6">Leistungen</h3>
+        <ul class="space-y-3">
+          <li><a href="/leistungen/tankreinigung" class="text-dark-300 hover:text-primary transition-colors text-sm">Tankreinigung</a></li>
+          <li><a href="/leistungen/tanksanierung" class="text-dark-300 hover:text-primary transition-colors text-sm">Tanksanierung</a></li>
+          <li><a href="/leistungen/tankdemontage" class="text-dark-300 hover:text-primary transition-colors text-sm">Tankdemontage</a></li>
+          <li><a href="/leistungen/tankstilllegung" class="text-dark-300 hover:text-primary transition-colors text-sm">Tankstilllegung</a></li>
+          <li><a href="/leistungen/tankneubau" class="text-dark-300 hover:text-primary transition-colors text-sm">Tankneubau</a></li>
+          <li><a href="/leistungen/lag-wartung" class="text-dark-300 hover:text-primary transition-colors text-sm">LAG-Wartung</a></li>
+        </ul>
+      </div>
+
+      <!-- Kontakt -->
+      <div>
+        <h3 class="text-sm font-semibold uppercase tracking-wider mb-6">Kontakt</h3>
+        <ul class="space-y-4">
+          <li class="flex items-start gap-3">
+            <MapPin class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+            <span class="text-dark-300 text-sm">
+              IS-Tankschutz<br />
+              47803 Krefeld<br />
+              Nordrhein-Westfalen
+            </span>
+          </li>
+          <li class="flex items-center gap-3">
+            <Phone class="w-5 h-5 text-primary flex-shrink-0" />
+            <a href="tel:+4921519329640" class="text-dark-300 hover:text-primary transition-colors text-sm">02151 9329640</a>
+          </li>
+          <li class="flex items-center gap-3">
+            <Mail class="w-5 h-5 text-primary flex-shrink-0" />
+            <a href="mailto:info@is-tankschutz.de" class="text-dark-300 hover:text-primary transition-colors text-sm">info@is-tankschutz.de</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Öffnungszeiten -->
+      <div>
+        <h3 class="text-sm font-semibold uppercase tracking-wider mb-6">Erreichbarkeit</h3>
+        <ul class="space-y-3">
+          <li class="flex items-start gap-3">
+            <Clock class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+            <div class="text-dark-300 text-sm">
+              <p class="font-medium text-white">Mo - Fr: 7:00 - 18:00</p>
+              <p class="mt-1">Notdienst 24/7 erreichbar</p>
+            </div>
+          </li>
+        </ul>
+        <div class="mt-6 p-4 bg-primary/10 rounded-lg border border-primary/20">
+          <p class="text-sm text-primary font-medium">Notfall-Hotline</p>
+          <a href="tel:+4921519329640" class="text-lg font-bold text-white hover:text-primary transition-colors">02151 9329640</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Einzugsgebiet -->
+    <div class="mt-12 pt-8 border-t border-dark-800">
+      <p class="text-dark-400 text-sm text-center">
+        <span class="font-medium text-dark-300">Unser Einzugsgebiet:</span> Krefeld, Düsseldorf, Duisburg, Mönchengladbach, Neuss, Moers, Viersen, Kempen, Willich, Tönisvorst und Umgebung (100 km Radius)
+      </p>
+    </div>
+  </div>
+
+  <!-- Bottom Bar -->
+  <div class="border-t border-dark-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-dark-400 text-sm">
+          © {new Date().getFullYear()} IS-Tankschutz. Alle Rechte vorbehalten.
+        </p>
+        <div class="flex items-center gap-6">
+          <a href="/impressum" class="text-dark-400 hover:text-primary transition-colors text-sm">Impressum</a>
+          <a href="/datenschutz" class="text-dark-400 hover:text-primary transition-colors text-sm">Datenschutz</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

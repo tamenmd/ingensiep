@@ -1,0 +1,242 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import {
+  PlusCircle,
+  CheckCircle,
+  ArrowRight,
+  Phone,
+  Lightbulb,
+  Ruler,
+  Wrench
+} from 'lucide-astro';
+
+const benefits = [
+  'Individuelle Bedarfsanalyse',
+  'Modernste Tanktechnologie',
+  'Komplettservice von Planung bis Inbetriebnahme',
+  'WHG-konforme Installation',
+  'Alle Genehmigungen inklusive',
+  'Schulung zur Bedienung'
+];
+
+const process = [
+  {
+    title: 'Beratung',
+    description: 'Analyse Ihres Bedarfs und Ihrer räumlichen Gegebenheiten'
+  },
+  {
+    title: 'Planung',
+    description: 'Auswahl des optimalen Tanksystems und Erstellung des Einbauplans'
+  },
+  {
+    title: 'Installation',
+    description: 'Fachgerechte Montage durch unsere geschulten Techniker'
+  },
+  {
+    title: 'Inbetriebnahme',
+    description: 'Prüfung, Dokumentation und Einweisung'
+  }
+];
+
+const tankTypes = [
+  {
+    title: 'Erdtank',
+    description: 'Platzsparende Lösung für die unterirdische Installation im Garten'
+  },
+  {
+    title: 'Kellertank',
+    description: 'Klassische Variante für den Einbau im Heizungskeller'
+  },
+  {
+    title: 'Batterietank',
+    description: 'Flexible Lösung aus mehreren verbundenen Einzeltanks'
+  },
+  {
+    title: 'Doppelwandtank',
+    description: 'Maximale Sicherheit durch integriertes Leckschutzsystem'
+  }
+];
+---
+
+<Layout
+  title="Tankneubau Krefeld | Neue Tankanlage installieren | IS-Tankschutz"
+  description="Professioneller Tankneubau in Krefeld und Umgebung. Von der Beratung über die Installation bis zur Inbetriebnahme – Komplettservice für Ihre neue Tankanlage. WHG-zertifiziert."
+  keywords="Tankneubau Krefeld, neue Tankanlage, Öltank einbauen, Heizöltank installieren, Tankinstallation, Düsseldorf, NRW"
+>
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-br from-dark-950 via-dark-900 to-dark-950 py-20 lg:py-28">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="flex items-center gap-2 text-primary mb-4">
+            <a href="/leistungen" class="hover:underline">Leistungen</a>
+            <span>/</span>
+            <span>Tankneubau</span>
+          </div>
+          <h1 class="text-4xl sm:text-5xl font-bold text-white mb-6">
+            Professioneller <span class="text-primary">Tankneubau</span>
+          </h1>
+          <p class="text-dark-300 text-lg mb-8">
+            Sie planen eine neue Tankanlage? Wir übernehmen die komplette Planung
+            und Installation Ihres neuen Heizöltanks – von der Beratung bis zur
+            Inbetriebnahme. Profitieren Sie von modernster Technik und maximaler Sicherheit.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a
+              href="/kontakt"
+              class="inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-700 text-white px-8 py-4 rounded-lg font-semibold transition-all"
+            >
+              Beratung anfordern
+              <ArrowRight class="w-5 h-5" />
+            </a>
+            <a
+              href="tel:+4921519329640"
+              class="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-lg font-semibold transition-all border border-white/20"
+            >
+              <Phone class="w-5 h-5" />
+              02151 9329640
+            </a>
+          </div>
+        </div>
+
+        <!-- Service Image Placeholder -->
+        <div class="hidden lg:block">
+          <div class="bg-gradient-to-br from-primary/20 to-primary/5 rounded-2xl aspect-square flex items-center justify-center border border-primary/20">
+            <PlusCircle class="w-32 h-32 text-primary/50" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <section class="py-20 lg:py-28 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <span class="text-primary font-semibold text-sm uppercase tracking-wider">Komplettservice</span>
+          <h2 class="text-3xl sm:text-4xl font-bold text-dark mt-4 mb-6">
+            Alles aus einer Hand
+          </h2>
+          <p class="text-dark-500 text-lg mb-6">
+            Der Einbau einer neuen Tankanlage erfordert sorgfältige Planung und
+            fachgerechte Ausführung. Als WHG-zertifizierter Fachbetrieb begleiten
+            wir Sie durch den gesamten Prozess.
+          </p>
+          <p class="text-dark-500 mb-8">
+            Von der Auswahl des richtigen Tanksystems über die Einholung aller
+            Genehmigungen bis zur professionellen Installation – Sie haben einen
+            Ansprechpartner für alles.
+          </p>
+
+          <div class="grid grid-cols-3 gap-4">
+            <div class="bg-gray-50 rounded-xl p-4 text-center">
+              <Lightbulb class="w-8 h-8 text-primary mx-auto mb-2" />
+              <p class="text-sm font-semibold text-dark">Fachberatung</p>
+            </div>
+            <div class="bg-gray-50 rounded-xl p-4 text-center">
+              <Ruler class="w-8 h-8 text-primary mx-auto mb-2" />
+              <p class="text-sm font-semibold text-dark">Planung</p>
+            </div>
+            <div class="bg-gray-50 rounded-xl p-4 text-center">
+              <Wrench class="w-8 h-8 text-primary mx-auto mb-2" />
+              <p class="text-sm font-semibold text-dark">Installation</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gray-50 rounded-2xl p-8">
+          <h3 class="text-xl font-bold text-dark mb-6">Ihre Vorteile</h3>
+          <ul class="space-y-4">
+            {benefits.map((benefit) => (
+              <li class="flex items-center gap-3">
+                <CheckCircle class="w-5 h-5 text-primary flex-shrink-0" />
+                <span class="text-dark-600">{benefit}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tank Types Section -->
+  <section class="py-20 lg:py-28 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-primary font-semibold text-sm uppercase tracking-wider">Tankarten</span>
+        <h2 class="text-3xl sm:text-4xl font-bold text-dark mt-4 mb-6">
+          Die richtige Tankart für Ihren Bedarf
+        </h2>
+        <p class="text-dark-500 text-lg">
+          Je nach Platzverhältnissen und Anforderungen finden wir die optimale Lösung für Sie.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        {tankTypes.map((tank) => (
+          <div class="bg-white rounded-xl p-8 shadow-sm">
+            <h3 class="text-xl font-bold text-dark mb-3">{tank.title}</h3>
+            <p class="text-dark-500">{tank.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section class="py-20 lg:py-28 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-primary font-semibold text-sm uppercase tracking-wider">Der Ablauf</span>
+        <h2 class="text-3xl sm:text-4xl font-bold text-dark mt-4 mb-6">
+          Von der Idee zur fertigen Anlage
+        </h2>
+        <p class="text-dark-500 text-lg">
+          Ein strukturierter Prozess für Ihr Tankneubau-Projekt.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {process.map((step, index) => (
+          <div class="bg-gray-50 rounded-xl p-6">
+            <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center text-xl font-bold mb-4">
+              {index + 1}
+            </div>
+            <h3 class="text-lg font-bold text-dark mb-2">{step.title}</h3>
+            <p class="text-dark-500 text-sm">{step.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 lg:py-28 bg-primary">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold text-white mb-6">
+        Neue Tankanlage geplant?
+      </h2>
+      <p class="text-white/80 text-lg mb-10 max-w-2xl mx-auto">
+        Lassen Sie sich von unseren Experten beraten. Wir finden die optimale
+        Lösung für Ihre Anforderungen und Ihr Budget.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="/kontakt"
+          class="inline-flex items-center justify-center gap-2 bg-white hover:bg-gray-100 text-primary px-8 py-4 rounded-lg font-semibold text-lg transition-all"
+        >
+          Beratung anfordern
+          <ArrowRight class="w-5 h-5" />
+        </a>
+        <a
+          href="tel:+4921519329640"
+          class="inline-flex items-center justify-center gap-2 bg-transparent hover:bg-white/10 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all border-2 border-white"
+        >
+          <Phone class="w-5 h-5" />
+          02151 9329640
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

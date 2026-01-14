@@ -1,0 +1,239 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import {
+  Wrench,
+  CheckCircle,
+  ArrowRight,
+  Phone,
+  Shield,
+  Timer,
+  PiggyBank
+} from 'lucide-astro';
+
+const benefits = [
+  'Deutlich günstiger als Neukauf',
+  'Verlängerung der Lebensdauer um 15-25 Jahre',
+  'WHG-konforme Ausführung',
+  'Umweltfreundliche Lösung',
+  'Schnelle Umsetzung ohne Umbauarbeiten',
+  'Vollständige Dokumentation'
+];
+
+const methods = [
+  {
+    title: 'Innenbeschichtung',
+    description: 'Auftrag einer Spezialschicht auf die Tankinnenwand für dauerhaften Korrosionsschutz'
+  },
+  {
+    title: 'Risssanierung',
+    description: 'Fachgerechte Reparatur von Haarrissen und kleinen Beschädigungen'
+  },
+  {
+    title: 'Korrosionsschutz',
+    description: 'Behandlung von Roststellen und Aufbringung schützender Beschichtungen'
+  },
+  {
+    title: 'Anschluss-Erneuerung',
+    description: 'Austausch verschlissener Anschlüsse, Dichtungen und Armaturen'
+  }
+];
+---
+
+<Layout
+  title="Tanksanierung Krefeld | Innenbeschichtung & Reparatur | IS-Tankschutz"
+  description="Professionelle Tanksanierung in Krefeld: Innenbeschichtung, Risssanierung und Korrosionsschutz. Günstiger als Neukauf, verlängert die Lebensdauer um bis zu 25 Jahre. WHG-zertifiziert."
+  keywords="Tanksanierung Krefeld, Tankinnenbeschichtung, Tanksanierung Kosten, Heizöltank sanieren, Tankbeschichtung, Düsseldorf, NRW"
+>
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-br from-dark-950 via-dark-900 to-dark-950 py-20 lg:py-28">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="flex items-center gap-2 text-primary mb-4">
+            <a href="/leistungen" class="hover:underline">Leistungen</a>
+            <span>/</span>
+            <span>Tanksanierung</span>
+          </div>
+          <h1 class="text-4xl sm:text-5xl font-bold text-white mb-6">
+            Professionelle <span class="text-primary">Tanksanierung</span>
+          </h1>
+          <p class="text-dark-300 text-lg mb-8">
+            Ihr Tank zeigt Alterserscheinungen? Mit unserer fachgerechten Tanksanierung und
+            Innenbeschichtung verlängern Sie die Lebensdauer Ihres Tanks um bis zu 25 Jahre –
+            deutlich günstiger als ein Neukauf.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a
+              href="/kontakt"
+              class="inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-700 text-white px-8 py-4 rounded-lg font-semibold transition-all"
+            >
+              Kostenlose Beratung
+              <ArrowRight class="w-5 h-5" />
+            </a>
+            <a
+              href="tel:+4921519329640"
+              class="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-lg font-semibold transition-all border border-white/20"
+            >
+              <Phone class="w-5 h-5" />
+              02151 9329640
+            </a>
+          </div>
+        </div>
+
+        <!-- Service Image Placeholder -->
+        <div class="hidden lg:block">
+          <div class="bg-gradient-to-br from-primary/20 to-primary/5 rounded-2xl aspect-square flex items-center justify-center border border-primary/20">
+            <Wrench class="w-32 h-32 text-primary/50" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <section class="py-20 lg:py-28 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <span class="text-primary font-semibold text-sm uppercase tracking-wider">Sanierung statt Neukauf</span>
+          <h2 class="text-3xl sm:text-4xl font-bold text-dark mt-4 mb-6">
+            Die wirtschaftliche Alternative
+          </h2>
+          <p class="text-dark-500 text-lg mb-6">
+            Bevor Sie in einen neuen Tank investieren, prüfen Sie die Möglichkeit einer
+            professionellen Sanierung. In vielen Fällen ist dies die deutlich günstigere
+            und schnellere Lösung.
+          </p>
+          <p class="text-dark-500 mb-8">
+            Unsere Tanksanierung umfasst eine gründliche Reinigung, die Beseitigung aller
+            Schäden und das Aufbringen einer hochwertigen Innenbeschichtung. Das Ergebnis:
+            Ein Tank wie neu – zu einem Bruchteil der Kosten.
+          </p>
+
+          <div class="grid grid-cols-3 gap-4">
+            <div class="bg-gray-50 rounded-xl p-4 text-center">
+              <PiggyBank class="w-8 h-8 text-primary mx-auto mb-2" />
+              <p class="text-sm font-semibold text-dark">Bis zu 60% günstiger</p>
+            </div>
+            <div class="bg-gray-50 rounded-xl p-4 text-center">
+              <Timer class="w-8 h-8 text-primary mx-auto mb-2" />
+              <p class="text-sm font-semibold text-dark">1-2 Tage Dauer</p>
+            </div>
+            <div class="bg-gray-50 rounded-xl p-4 text-center">
+              <Shield class="w-8 h-8 text-primary mx-auto mb-2" />
+              <p class="text-sm font-semibold text-dark">Garantie inklusive</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gray-50 rounded-2xl p-8">
+          <h3 class="text-xl font-bold text-dark mb-6">Ihre Vorteile auf einen Blick</h3>
+          <ul class="space-y-4">
+            {benefits.map((benefit) => (
+              <li class="flex items-center gap-3">
+                <CheckCircle class="w-5 h-5 text-primary flex-shrink-0" />
+                <span class="text-dark-600">{benefit}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Methods Section -->
+  <section class="py-20 lg:py-28 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-primary font-semibold text-sm uppercase tracking-wider">Sanierungsverfahren</span>
+        <h2 class="text-3xl sm:text-4xl font-bold text-dark mt-4 mb-6">
+          Unsere Sanierungsmethoden
+        </h2>
+        <p class="text-dark-500 text-lg">
+          Je nach Zustand Ihres Tanks setzen wir verschiedene bewährte Verfahren ein.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        {methods.map((method) => (
+          <div class="bg-white rounded-xl p-8 shadow-sm">
+            <h3 class="text-xl font-bold text-dark mb-3">{method.title}</h3>
+            <p class="text-dark-500">{method.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- When to Renovate Section -->
+  <section class="py-20 lg:py-28 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto">
+        <span class="text-primary font-semibold text-sm uppercase tracking-wider">Indikationen</span>
+        <h2 class="text-3xl sm:text-4xl font-bold text-dark mt-4 mb-6">
+          Wann ist eine Tanksanierung sinnvoll?
+        </h2>
+
+        <div class="space-y-6">
+          <div class="flex items-start gap-4 p-6 bg-gray-50 rounded-xl">
+            <CheckCircle class="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+            <div>
+              <h3 class="font-semibold text-dark mb-1">Alter des Tanks über 15 Jahre</h3>
+              <p class="text-dark-500 text-sm">Präventive Sanierung verhindert zukünftige Schäden</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4 p-6 bg-gray-50 rounded-xl">
+            <CheckCircle class="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+            <div>
+              <h3 class="font-semibold text-dark mb-1">Sichtbare Korrosion oder Rost</h3>
+              <p class="text-dark-500 text-sm">Frühe Behandlung verhindert Durchrostung</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4 p-6 bg-gray-50 rounded-xl">
+            <CheckCircle class="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+            <div>
+              <h3 class="font-semibold text-dark mb-1">Haarrisse im Material</h3>
+              <p class="text-dark-500 text-sm">Professionelle Reparatur stellt Dichtigkeit wieder her</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4 p-6 bg-gray-50 rounded-xl">
+            <CheckCircle class="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+            <div>
+              <h3 class="font-semibold text-dark mb-1">Empfehlung nach TÜV-Prüfung</h3>
+              <p class="text-dark-500 text-sm">Behördliche Auflagen erfüllen</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 lg:py-28 bg-primary">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold text-white mb-6">
+        Kostenlose Zustandsanalyse
+      </h2>
+      <p class="text-white/80 text-lg mb-10 max-w-2xl mx-auto">
+        Unsere Experten prüfen Ihren Tank und beraten Sie ehrlich, ob eine Sanierung
+        sinnvoll ist oder andere Maßnahmen empfehlenswert sind.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="/kontakt"
+          class="inline-flex items-center justify-center gap-2 bg-white hover:bg-gray-100 text-primary px-8 py-4 rounded-lg font-semibold text-lg transition-all"
+        >
+          Beratung anfordern
+          <ArrowRight class="w-5 h-5" />
+        </a>
+        <a
+          href="tel:+4921519329640"
+          class="inline-flex items-center justify-center gap-2 bg-transparent hover:bg-white/10 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all border-2 border-white"
+        >
+          <Phone class="w-5 h-5" />
+          02151 9329640
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,188 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import {
+  Droplets,
+  Wrench,
+  Trash2,
+  PauseCircle,
+  PlusCircle,
+  Settings,
+  ArrowRight,
+  CheckCircle,
+  Phone
+} from 'lucide-astro';
+
+const services = [
+  {
+    icon: Droplets,
+    title: 'Tankreinigung',
+    slug: 'tankreinigung',
+    description: 'Professionelle Reinigung Ihrer Heizöltanks mit modernster Absaugtechnik. Wir entfernen Ölschlämme, Ablagerungen und Kondenswasser für eine optimale Heizölqualität.',
+    features: ['Schlammabsaugung', 'Innenreinigung', 'Qualitätskontrolle', 'Protokollierung']
+  },
+  {
+    icon: Wrench,
+    title: 'Tanksanierung',
+    slug: 'tanksanierung',
+    description: 'Fachgerechte Innenbeschichtung und Sanierung beschädigter Tankanlagen. Wir reparieren Risse, Korrosionsschäden und erneuern die Tankbeschichtung nach WHG-Vorgaben.',
+    features: ['Innenbeschichtung', 'Risssanierung', 'Korrosionsschutz', 'WHG-konform']
+  },
+  {
+    icon: Trash2,
+    title: 'Tankdemontage',
+    slug: 'tankdemontage',
+    description: 'Sichere Demontage und umweltgerechte Entsorgung alter Öltanks. Unsere zertifizierten Fachkräfte entfernen Ihren Tank fachgerecht und kümmern sich um alle Formalitäten.',
+    features: ['Sichere Entleerung', 'Fachdemontage', 'Entsorgungsnachweis', 'Behördenabnahme']
+  },
+  {
+    icon: PauseCircle,
+    title: 'Tankstilllegung',
+    slug: 'tankstilllegung',
+    description: 'Ordnungsgemäße Stilllegung nicht mehr benötigter Tankanlagen. Wir führen alle erforderlichen Maßnahmen durch und dokumentieren die Stilllegung für die Behörden.',
+    features: ['Entleerung', 'Verfüllung', 'Dokumentation', 'Behördenanmeldung']
+  },
+  {
+    icon: PlusCircle,
+    title: 'Tankneubau',
+    slug: 'tankneubau',
+    description: 'Planung und Installation neuer Tankanlagen mit modernster Technik. Von der Beratung über die Montage bis zur Inbetriebnahme – alles aus einer Hand.',
+    features: ['Bedarfsanalyse', 'Planung', 'Installation', 'Inbetriebnahme']
+  },
+  {
+    icon: Settings,
+    title: 'LAG-Wartung',
+    slug: 'lag-wartung',
+    description: 'Regelmäßige Wartung und Prüfung Ihrer Leckschutzauskleidung (LAG). Wir überprüfen die Funktionsfähigkeit und stellen den dauerhaften Schutz sicher.',
+    features: ['Dichtigkeitsprüfung', 'Sensorcheck', 'Wartungsprotokoll', 'Reparatur']
+  }
+];
+---
+
+<Layout
+  title="Unsere Leistungen | Tankreinigung, Sanierung & Demontage | IS-Tankschutz"
+  description="Komplettservice für Ihre Tankanlage: Tankreinigung, Tanksanierung, Tankdemontage, Stilllegung, Neubau und LAG-Wartung. WHG-zertifizierter Fachbetrieb in Krefeld."
+  keywords="Tankreinigung, Tanksanierung, Tankdemontage, Tankstilllegung, Tankneubau, LAG Wartung, Heizöltank Service, Krefeld, Düsseldorf, NRW"
+>
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-br from-dark-950 via-dark-900 to-dark-950 py-20 lg:py-28">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <span class="text-primary font-semibold text-sm uppercase tracking-wider">Unsere Leistungen</span>
+        <h1 class="text-4xl sm:text-5xl font-bold text-white mt-4 mb-6">
+          Professioneller Service für Ihre Tankanlage
+        </h1>
+        <p class="text-dark-300 text-lg">
+          Von der Reinigung über die Sanierung bis zur fachgerechten Entsorgung – als WHG-zertifizierter
+          Fachbetrieb bieten wir Ihnen alle Dienstleistungen aus einer Hand. Schnell, sicher und zuverlässig.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Grid -->
+  <section class="py-20 lg:py-28 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 gap-8">
+        {services.map((service) => (
+          <article class="bg-gray-50 rounded-2xl p-8 hover:shadow-xl hover:shadow-gray-200/50 transition-all group">
+            <div class="flex items-start gap-6">
+              <div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-primary transition-colors">
+                <service.icon class="w-8 h-8 text-primary group-hover:text-white transition-colors" />
+              </div>
+              <div class="flex-grow">
+                <h2 class="text-2xl font-bold text-dark mb-3 group-hover:text-primary transition-colors">
+                  {service.title}
+                </h2>
+                <p class="text-dark-500 mb-6">
+                  {service.description}
+                </p>
+                <ul class="grid grid-cols-2 gap-2 mb-6">
+                  {service.features.map((feature) => (
+                    <li class="flex items-center gap-2 text-sm text-dark-600">
+                      <CheckCircle class="w-4 h-4 text-primary flex-shrink-0" />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+                <a
+                  href={`/leistungen/${service.slug}`}
+                  class="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all"
+                >
+                  Mehr erfahren
+                  <ArrowRight class="w-4 h-4" />
+                </a>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section class="py-20 lg:py-28 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-primary font-semibold text-sm uppercase tracking-wider">Unser Ablauf</span>
+        <h2 class="text-3xl sm:text-4xl font-bold text-dark mt-4 mb-6">
+          So einfach funktioniert's
+        </h2>
+        <p class="text-dark-500 text-lg">
+          Von der ersten Anfrage bis zur fertigen Arbeit – wir machen es Ihnen so einfach wie möglich.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-4 gap-8">
+        <div class="text-center">
+          <div class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">1</div>
+          <h3 class="text-lg font-bold text-dark mb-2">Anfrage</h3>
+          <p class="text-dark-500 text-sm">Kontaktieren Sie uns telefonisch oder über unser Formular</p>
+        </div>
+        <div class="text-center">
+          <div class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">2</div>
+          <h3 class="text-lg font-bold text-dark mb-2">Beratung</h3>
+          <p class="text-dark-500 text-sm">Wir besprechen Ihre Anforderungen und erstellen ein Angebot</p>
+        </div>
+        <div class="text-center">
+          <div class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">3</div>
+          <h3 class="text-lg font-bold text-dark mb-2">Ausführung</h3>
+          <p class="text-dark-500 text-sm">Unsere Fachkräfte führen die Arbeiten termingerecht durch</p>
+        </div>
+        <div class="text-center">
+          <div class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">4</div>
+          <h3 class="text-lg font-bold text-dark mb-2">Abnahme</h3>
+          <p class="text-dark-500 text-sm">Sie erhalten alle Dokumente und Nachweise</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 lg:py-28 bg-primary">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold text-white mb-6">
+        Welche Leistung benötigen Sie?
+      </h2>
+      <p class="text-white/80 text-lg mb-10 max-w-2xl mx-auto">
+        Unsere Experten beraten Sie gerne und erstellen Ihnen ein individuelles Angebot –
+        kostenlos und unverbindlich.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="/kontakt"
+          class="inline-flex items-center justify-center gap-2 bg-white hover:bg-gray-100 text-primary px-8 py-4 rounded-lg font-semibold text-lg transition-all"
+        >
+          Angebot anfordern
+          <ArrowRight class="w-5 h-5" />
+        </a>
+        <a
+          href="tel:+4921519329640"
+          class="inline-flex items-center justify-center gap-2 bg-transparent hover:bg-white/10 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all border-2 border-white"
+        >
+          <Phone class="w-5 h-5" />
+          02151 9329640
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

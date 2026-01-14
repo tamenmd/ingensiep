@@ -1,0 +1,247 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import {
+  Trash2,
+  CheckCircle,
+  ArrowRight,
+  Phone,
+  FileCheck,
+  Recycle,
+  HardHat
+} from 'lucide-astro';
+
+const benefits = [
+  'Fachgerechte und sichere Demontage',
+  'Umweltgerechte Entsorgung aller Materialien',
+  'Vollständige Dokumentation und Nachweise',
+  'Behördenabnahme und Stilllegungsbescheinigung',
+  'Schnelle und saubere Durchführung',
+  'Komplettservice aus einer Hand'
+];
+
+const process = [
+  {
+    title: 'Vorbereitung',
+    description: 'Restentleerung des Tanks und Absaugung aller Ölrückstände'
+  },
+  {
+    title: 'Reinigung',
+    description: 'Gründliche Innenreinigung zur Vorbereitung der Demontage'
+  },
+  {
+    title: 'Demontage',
+    description: 'Fachgerechter Ausbau des Tanks und aller Anschlüsse'
+  },
+  {
+    title: 'Entsorgung',
+    description: 'Umweltgerechte Entsorgung mit Nachweis'
+  }
+];
+---
+
+<Layout
+  title="Tankdemontage Krefeld | Öltank entsorgen & ausbauen | IS-Tankschutz"
+  description="Professionelle Tankdemontage in Krefeld und Umgebung. Sichere Entleerung, fachgerechter Ausbau und umweltgerechte Entsorgung Ihres Heizöltanks. Inklusive Behördenabnahme."
+  keywords="Tankdemontage Krefeld, Öltank entsorgen, Tank ausbauen, Tankentsorgung, Heizöltank demontieren, Düsseldorf, Duisburg, NRW"
+>
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-br from-dark-950 via-dark-900 to-dark-950 py-20 lg:py-28">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="flex items-center gap-2 text-primary mb-4">
+            <a href="/leistungen" class="hover:underline">Leistungen</a>
+            <span>/</span>
+            <span>Tankdemontage</span>
+          </div>
+          <h1 class="text-4xl sm:text-5xl font-bold text-white mb-6">
+            Professionelle <span class="text-primary">Tankdemontage</span>
+          </h1>
+          <p class="text-dark-300 text-lg mb-8">
+            Sie stellen auf Gas, Fernwärme oder Wärmepumpe um? Wir kümmern uns um die
+            sichere Demontage und umweltgerechte Entsorgung Ihres alten Heizöltanks –
+            schnell, sauber und mit allen erforderlichen Nachweisen.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a
+              href="/kontakt"
+              class="inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-700 text-white px-8 py-4 rounded-lg font-semibold transition-all"
+            >
+              Angebot anfordern
+              <ArrowRight class="w-5 h-5" />
+            </a>
+            <a
+              href="tel:+4921519329640"
+              class="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-lg font-semibold transition-all border border-white/20"
+            >
+              <Phone class="w-5 h-5" />
+              02151 9329640
+            </a>
+          </div>
+        </div>
+
+        <!-- Service Image Placeholder -->
+        <div class="hidden lg:block">
+          <div class="bg-gradient-to-br from-primary/20 to-primary/5 rounded-2xl aspect-square flex items-center justify-center border border-primary/20">
+            <Trash2 class="w-32 h-32 text-primary/50" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Section -->
+  <section class="py-20 lg:py-28 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <span class="text-primary font-semibold text-sm uppercase tracking-wider">Fachgerecht & Sicher</span>
+          <h2 class="text-3xl sm:text-4xl font-bold text-dark mt-4 mb-6">
+            Tankdemontage vom Profi
+          </h2>
+          <p class="text-dark-500 text-lg mb-6">
+            Die Demontage eines Öltanks ist keine Aufgabe für Laien. Heizöl ist ein
+            wassergefährdender Stoff, der fachgerecht behandelt werden muss. Als
+            WHG-zertifizierter Fachbetrieb garantieren wir eine sichere und vorschriftsmäßige
+            Durchführung.
+          </p>
+          <p class="text-dark-500 mb-8">
+            Von der Restentleerung über die Reinigung bis zur fachgerechten Entsorgung –
+            wir übernehmen den kompletten Service und liefern Ihnen alle erforderlichen
+            Dokumente für Behörden und Versicherungen.
+          </p>
+
+          <div class="grid grid-cols-3 gap-4">
+            <div class="bg-gray-50 rounded-xl p-4 text-center">
+              <HardHat class="w-8 h-8 text-primary mx-auto mb-2" />
+              <p class="text-sm font-semibold text-dark">Geschulte Fachkräfte</p>
+            </div>
+            <div class="bg-gray-50 rounded-xl p-4 text-center">
+              <Recycle class="w-8 h-8 text-primary mx-auto mb-2" />
+              <p class="text-sm font-semibold text-dark">Umweltgerecht</p>
+            </div>
+            <div class="bg-gray-50 rounded-xl p-4 text-center">
+              <FileCheck class="w-8 h-8 text-primary mx-auto mb-2" />
+              <p class="text-sm font-semibold text-dark">Alle Nachweise</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gray-50 rounded-2xl p-8">
+          <h3 class="text-xl font-bold text-dark mb-6">Ihre Vorteile</h3>
+          <ul class="space-y-4">
+            {benefits.map((benefit) => (
+              <li class="flex items-center gap-3">
+                <CheckCircle class="w-5 h-5 text-primary flex-shrink-0" />
+                <span class="text-dark-600">{benefit}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section class="py-20 lg:py-28 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-primary font-semibold text-sm uppercase tracking-wider">Der Ablauf</span>
+        <h2 class="text-3xl sm:text-4xl font-bold text-dark mt-4 mb-6">
+          So läuft die Tankdemontage ab
+        </h2>
+        <p class="text-dark-500 text-lg">
+          Ein strukturierter Prozess für eine sichere und saubere Durchführung.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {process.map((step, index) => (
+          <div class="bg-white rounded-xl p-6 shadow-sm">
+            <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center text-xl font-bold mb-4">
+              {index + 1}
+            </div>
+            <h3 class="text-lg font-bold text-dark mb-2">{step.title}</h3>
+            <p class="text-dark-500 text-sm">{step.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Documentation Section -->
+  <section class="py-20 lg:py-28 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto">
+        <span class="text-primary font-semibold text-sm uppercase tracking-wider">Dokumentation</span>
+        <h2 class="text-3xl sm:text-4xl font-bold text-dark mt-4 mb-6">
+          Diese Unterlagen erhalten Sie
+        </h2>
+        <p class="text-dark-500 text-lg mb-8">
+          Nach Abschluss der Demontage erhalten Sie eine vollständige Dokumentation
+          für Ihre Unterlagen, die Behörden und Ihre Versicherung.
+        </p>
+
+        <div class="grid sm:grid-cols-2 gap-6">
+          <div class="flex items-start gap-4 p-6 bg-gray-50 rounded-xl">
+            <FileCheck class="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+            <div>
+              <h3 class="font-semibold text-dark mb-1">Stilllegungsbescheinigung</h3>
+              <p class="text-dark-500 text-sm">Offizieller Nachweis der fachgerechten Stilllegung</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4 p-6 bg-gray-50 rounded-xl">
+            <FileCheck class="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+            <div>
+              <h3 class="font-semibold text-dark mb-1">Entsorgungsnachweis</h3>
+              <p class="text-dark-500 text-sm">Dokumentation der umweltgerechten Entsorgung</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4 p-6 bg-gray-50 rounded-xl">
+            <FileCheck class="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+            <div>
+              <h3 class="font-semibold text-dark mb-1">Fotodokumentation</h3>
+              <p class="text-dark-500 text-sm">Bilder vor, während und nach der Demontage</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4 p-6 bg-gray-50 rounded-xl">
+            <FileCheck class="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+            <div>
+              <h3 class="font-semibold text-dark mb-1">Arbeitsbericht</h3>
+              <p class="text-dark-500 text-sm">Detaillierte Aufstellung aller durchgeführten Arbeiten</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 lg:py-28 bg-primary">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold text-white mb-6">
+        Tank loswerden? Wir helfen!
+      </h2>
+      <p class="text-white/80 text-lg mb-10 max-w-2xl mx-auto">
+        Holen Sie sich jetzt ein unverbindliches Angebot für die Demontage Ihres
+        Heizöltanks. Wir beraten Sie gerne zu allen Fragen.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="/kontakt"
+          class="inline-flex items-center justify-center gap-2 bg-white hover:bg-gray-100 text-primary px-8 py-4 rounded-lg font-semibold text-lg transition-all"
+        >
+          Angebot anfordern
+          <ArrowRight class="w-5 h-5" />
+        </a>
+        <a
+          href="tel:+4921519329640"
+          class="inline-flex items-center justify-center gap-2 bg-transparent hover:bg-white/10 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all border-2 border-white"
+        >
+          <Phone class="w-5 h-5" />
+          02151 9329640
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

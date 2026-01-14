@@ -1,0 +1,275 @@
+---
+import Layout from '../layouts/Layout.astro';
+import {
+  Phone,
+  Mail,
+  MapPin,
+  Clock,
+  Send,
+  MessageSquare
+} from 'lucide-astro';
+
+const services = [
+  { value: 'tankreinigung', label: 'Tankreinigung' },
+  { value: 'tanksanierung', label: 'Tanksanierung' },
+  { value: 'tankdemontage', label: 'Tankdemontage' },
+  { value: 'tankstilllegung', label: 'Tankstilllegung' },
+  { value: 'tankneubau', label: 'Tankneubau' },
+  { value: 'lag-wartung', label: 'LAG-Wartung' },
+  { value: 'sonstiges', label: 'Sonstiges' }
+];
+---
+
+<Layout
+  title="Kontakt | Angebot anfordern | IS-Tankschutz Krefeld"
+  description="Kontaktieren Sie IS-Tankschutz für ein unverbindliches Angebot. Tankreinigung, Tanksanierung und mehr in Krefeld und Umgebung. Tel: 02151 9329640"
+  keywords="Kontakt IS-Tankschutz, Tankschutz Krefeld Kontakt, Angebot Tankreinigung, Beratung Tankservice"
+>
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-br from-dark-950 via-dark-900 to-dark-950 py-20 lg:py-28">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <span class="text-primary font-semibold text-sm uppercase tracking-wider">Kontakt</span>
+        <h1 class="text-4xl sm:text-5xl font-bold text-white mt-4 mb-6">
+          Wir sind für Sie da
+        </h1>
+        <p class="text-dark-300 text-lg">
+          Haben Sie Fragen oder möchten ein Angebot anfordern? Kontaktieren Sie uns
+          telefonisch, per E-Mail oder über unser Kontaktformular. Wir melden uns
+          schnellstmöglich bei Ihnen zurück.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="py-20 lg:py-28 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-3 gap-12">
+        <!-- Contact Info -->
+        <div class="lg:col-span-1">
+          <h2 class="text-2xl font-bold text-dark mb-8">Kontaktdaten</h2>
+
+          <div class="space-y-6">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                <Phone class="w-6 h-6 text-primary" />
+              </div>
+              <div>
+                <h3 class="font-semibold text-dark mb-1">Telefon</h3>
+                <a href="tel:+4921519329640" class="text-dark-500 hover:text-primary transition-colors">
+                  02151 9329640
+                </a>
+                <p class="text-sm text-dark-400 mt-1">Mo-Fr: 7:00 - 18:00 Uhr</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                <Mail class="w-6 h-6 text-primary" />
+              </div>
+              <div>
+                <h3 class="font-semibold text-dark mb-1">E-Mail</h3>
+                <a href="mailto:info@is-tankschutz.de" class="text-dark-500 hover:text-primary transition-colors">
+                  info@is-tankschutz.de
+                </a>
+                <p class="text-sm text-dark-400 mt-1">Antwort innerhalb 24h</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                <MapPin class="w-6 h-6 text-primary" />
+              </div>
+              <div>
+                <h3 class="font-semibold text-dark mb-1">Adresse</h3>
+                <p class="text-dark-500">
+                  IS-Tankschutz<br />
+                  47803 Krefeld<br />
+                  Nordrhein-Westfalen
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                <Clock class="w-6 h-6 text-primary" />
+              </div>
+              <div>
+                <h3 class="font-semibold text-dark mb-1">Öffnungszeiten</h3>
+                <p class="text-dark-500">
+                  Mo - Fr: 7:00 - 18:00 Uhr<br />
+                  <span class="text-primary font-medium">Notdienst: 24/7</span>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Emergency Box -->
+          <div class="mt-8 p-6 bg-primary rounded-xl text-white">
+            <h3 class="font-bold text-lg mb-2">Notfall?</h3>
+            <p class="text-white/80 text-sm mb-4">
+              Bei Ölaustritt oder anderen Notfällen erreichen Sie uns rund um die Uhr.
+            </p>
+            <a
+              href="tel:+4921519329640"
+              class="inline-flex items-center gap-2 bg-white text-primary px-4 py-2 rounded-lg font-semibold text-sm hover:bg-gray-100 transition-colors"
+            >
+              <Phone class="w-4 h-4" />
+              02151 9329640
+            </a>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="lg:col-span-2">
+          <div class="bg-gray-50 rounded-2xl p-8 lg:p-12">
+            <div class="flex items-center gap-3 mb-8">
+              <MessageSquare class="w-8 h-8 text-primary" />
+              <h2 class="text-2xl font-bold text-dark">Nachricht senden</h2>
+            </div>
+
+            <form class="space-y-6">
+              <div class="grid sm:grid-cols-2 gap-6">
+                <div>
+                  <label for="name" class="block text-sm font-medium text-dark mb-2">
+                    Name *
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    class="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors"
+                    placeholder="Ihr vollständiger Name"
+                  />
+                </div>
+                <div>
+                  <label for="phone" class="block text-sm font-medium text-dark mb-2">
+                    Telefon *
+                  </label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    required
+                    class="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors"
+                    placeholder="Ihre Telefonnummer"
+                  />
+                </div>
+              </div>
+
+              <div class="grid sm:grid-cols-2 gap-6">
+                <div>
+                  <label for="email" class="block text-sm font-medium text-dark mb-2">
+                    E-Mail *
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    class="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors"
+                    placeholder="ihre@email.de"
+                  />
+                </div>
+                <div>
+                  <label for="plz" class="block text-sm font-medium text-dark mb-2">
+                    PLZ / Ort
+                  </label>
+                  <input
+                    type="text"
+                    id="plz"
+                    name="plz"
+                    class="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors"
+                    placeholder="z.B. 47803 Krefeld"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label for="service" class="block text-sm font-medium text-dark mb-2">
+                  Gewünschte Leistung
+                </label>
+                <select
+                  id="service"
+                  name="service"
+                  class="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors"
+                >
+                  <option value="">Bitte wählen...</option>
+                  {services.map((service) => (
+                    <option value={service.value}>{service.label}</option>
+                  ))}
+                </select>
+              </div>
+
+              <div>
+                <label for="message" class="block text-sm font-medium text-dark mb-2">
+                  Ihre Nachricht *
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  required
+                  class="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors resize-none"
+                  placeholder="Beschreiben Sie Ihr Anliegen..."
+                ></textarea>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <input
+                  type="checkbox"
+                  id="privacy"
+                  name="privacy"
+                  required
+                  class="mt-1 w-4 h-4 text-primary border-gray-300 rounded focus:ring-primary"
+                />
+                <label for="privacy" class="text-sm text-dark-500">
+                  Ich habe die <a href="/datenschutz" class="text-primary hover:underline">Datenschutzerklärung</a> gelesen und bin mit der Verarbeitung meiner Daten einverstanden. *
+                </label>
+              </div>
+
+              <button
+                type="submit"
+                class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-700 text-white px-8 py-4 rounded-lg font-semibold transition-all hover:shadow-lg hover:shadow-primary/25"
+              >
+                <Send class="w-5 h-5" />
+                Nachricht senden
+              </button>
+            </form>
+
+            <p class="text-dark-400 text-sm mt-6">
+              * Pflichtfelder. Wir melden uns in der Regel innerhalb von 24 Stunden bei Ihnen.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Map Section -->
+  <section class="py-20 lg:py-28 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="text-primary font-semibold text-sm uppercase tracking-wider">Einzugsgebiet</span>
+        <h2 class="text-3xl sm:text-4xl font-bold text-dark mt-4 mb-6">
+          Wir kommen zu Ihnen
+        </h2>
+        <p class="text-dark-500 text-lg">
+          Von Krefeld aus bedienen wir den gesamten Großraum im Umkreis von 100 km.
+          Düsseldorf, Duisburg, Mönchengladbach, Neuss und alle umliegenden Städte.
+        </p>
+      </div>
+
+      <!-- Google Maps Placeholder -->
+      <div class="bg-gray-200 rounded-2xl h-96 flex items-center justify-center">
+        <div class="text-center">
+          <MapPin class="w-12 h-12 text-dark-400 mx-auto mb-4" />
+          <p class="text-dark-500 font-medium">Google Maps Einbindung</p>
+          <p class="text-dark-400 text-sm">IS-Tankschutz, 47803 Krefeld</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

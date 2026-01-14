@@ -1,0 +1,229 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import {
+  PauseCircle,
+  CheckCircle,
+  ArrowRight,
+  Phone,
+  FileCheck,
+  AlertCircle
+} from 'lucide-astro';
+
+const benefits = [
+  'Behördlich anerkannte Stilllegung',
+  'Günstiger als komplette Demontage',
+  'Tank bleibt im Gebäude (bei Bedarf)',
+  'Vollständige Dokumentation',
+  'WHG-konforme Ausführung',
+  'Alle Genehmigungen inklusive'
+];
+
+const process = [
+  {
+    title: 'Entleerung',
+    description: 'Komplette Entfernung des Restheizöls aus dem Tank'
+  },
+  {
+    title: 'Reinigung',
+    description: 'Gründliche Reinigung und Entfernung aller Rückstände'
+  },
+  {
+    title: 'Verfüllung',
+    description: 'Fachgerechte Verfüllung mit zugelassenem Material'
+  },
+  {
+    title: 'Dokumentation',
+    description: 'Erstellung aller Nachweise für Behörden'
+  }
+];
+
+const requirements = [
+  'Vollständige Entleerung des Tanks',
+  'Reinigung von Ölresten und Schlämmen',
+  'Unbrauchbarmachung der Anschlüsse',
+  'Verfüllung oder Entfernung',
+  'Meldung an die zuständige Behörde'
+];
+---
+
+<Layout
+  title="Tankstilllegung Krefeld | Heizöltank stilllegen lassen | IS-Tankschutz"
+  description="Professionelle Tankstilllegung in Krefeld und Umgebung. Behördenkonforme Stilllegung Ihres nicht mehr benötigten Heizöltanks. Inklusive aller Dokumente und Genehmigungen."
+  keywords="Tankstilllegung Krefeld, Öltank stilllegen, Tank außer Betrieb nehmen, Heizöltank stillegen, Düsseldorf, Duisburg, NRW"
+>
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-br from-dark-950 via-dark-900 to-dark-950 py-20 lg:py-28">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="flex items-center gap-2 text-primary mb-4">
+            <a href="/leistungen" class="hover:underline">Leistungen</a>
+            <span>/</span>
+            <span>Tankstilllegung</span>
+          </div>
+          <h1 class="text-4xl sm:text-5xl font-bold text-white mb-6">
+            Professionelle <span class="text-primary">Tankstilllegung</span>
+          </h1>
+          <p class="text-dark-300 text-lg mb-8">
+            Ihr Heizöltank wird nicht mehr benötigt? Wir führen die ordnungsgemäße
+            Stilllegung durch – behördenkonform, sicher und mit allen erforderlichen
+            Nachweisen. Eine wirtschaftliche Alternative zur vollständigen Demontage.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a
+              href="/kontakt"
+              class="inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-700 text-white px-8 py-4 rounded-lg font-semibold transition-all"
+            >
+              Beratung anfordern
+              <ArrowRight class="w-5 h-5" />
+            </a>
+            <a
+              href="tel:+4921519329640"
+              class="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-lg font-semibold transition-all border border-white/20"
+            >
+              <Phone class="w-5 h-5" />
+              02151 9329640
+            </a>
+          </div>
+        </div>
+
+        <!-- Service Image Placeholder -->
+        <div class="hidden lg:block">
+          <div class="bg-gradient-to-br from-primary/20 to-primary/5 rounded-2xl aspect-square flex items-center justify-center border border-primary/20">
+            <PauseCircle class="w-32 h-32 text-primary/50" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Info Section -->
+  <section class="py-20 lg:py-28 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <span class="text-primary font-semibold text-sm uppercase tracking-wider">Stilllegung vs. Demontage</span>
+          <h2 class="text-3xl sm:text-4xl font-bold text-dark mt-4 mb-6">
+            Was ist eine Tankstilllegung?
+          </h2>
+          <p class="text-dark-500 text-lg mb-6">
+            Bei einer Stilllegung wird der Tank nicht entfernt, sondern fachgerecht
+            außer Betrieb genommen. Dies ist besonders sinnvoll, wenn eine Demontage
+            aus baulichen Gründen schwierig oder sehr aufwändig wäre.
+          </p>
+          <p class="text-dark-500 mb-8">
+            Der Tank wird entleert, gereinigt, die Anschlüsse werden verschlossen
+            und das Behältnis wird mit zugelassenem Material verfüllt. So wird
+            sichergestellt, dass keine Gefahren für Mensch und Umwelt entstehen.
+          </p>
+
+          <div class="bg-blue-50 border border-blue-200 rounded-xl p-6">
+            <div class="flex items-start gap-4">
+              <AlertCircle class="w-6 h-6 text-blue-600 flex-shrink-0 mt-1" />
+              <div>
+                <h3 class="font-semibold text-dark mb-2">Gut zu wissen</h3>
+                <p class="text-dark-600 text-sm">
+                  Die Stilllegung muss der zuständigen Behörde (Untere Wasserbehörde)
+                  gemeldet werden. Wir übernehmen alle Formalitäten für Sie.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gray-50 rounded-2xl p-8">
+          <h3 class="text-xl font-bold text-dark mb-6">Ihre Vorteile</h3>
+          <ul class="space-y-4">
+            {benefits.map((benefit) => (
+              <li class="flex items-center gap-3">
+                <CheckCircle class="w-5 h-5 text-primary flex-shrink-0" />
+                <span class="text-dark-600">{benefit}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section class="py-20 lg:py-28 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-primary font-semibold text-sm uppercase tracking-wider">Der Ablauf</span>
+        <h2 class="text-3xl sm:text-4xl font-bold text-dark mt-4 mb-6">
+          So läuft die Tankstilllegung ab
+        </h2>
+        <p class="text-dark-500 text-lg">
+          Ein strukturierter Prozess für eine sichere und behördenkonforme Stilllegung.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {process.map((step, index) => (
+          <div class="bg-white rounded-xl p-6 shadow-sm">
+            <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center text-xl font-bold mb-4">
+              {index + 1}
+            </div>
+            <h3 class="text-lg font-bold text-dark mb-2">{step.title}</h3>
+            <p class="text-dark-500 text-sm">{step.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Requirements Section -->
+  <section class="py-20 lg:py-28 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto">
+        <span class="text-primary font-semibold text-sm uppercase tracking-wider">Anforderungen</span>
+        <h2 class="text-3xl sm:text-4xl font-bold text-dark mt-4 mb-6">
+          Gesetzliche Anforderungen
+        </h2>
+        <p class="text-dark-500 text-lg mb-8">
+          Die Stilllegung eines Heizöltanks unterliegt strengen Vorschriften.
+          Als zertifizierter Fachbetrieb stellen wir sicher, dass alle Anforderungen erfüllt werden:
+        </p>
+
+        <div class="space-y-4">
+          {requirements.map((req) => (
+            <div class="flex items-center gap-4 p-4 bg-gray-50 rounded-xl">
+              <CheckCircle class="w-6 h-6 text-primary flex-shrink-0" />
+              <span class="text-dark-600">{req}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 lg:py-28 bg-primary">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold text-white mb-6">
+        Tank nicht mehr in Betrieb?
+      </h2>
+      <p class="text-white/80 text-lg mb-10 max-w-2xl mx-auto">
+        Wir beraten Sie, ob Stilllegung oder Demontage für Ihre Situation
+        die beste Lösung ist. Fordern Sie jetzt ein unverbindliches Angebot an.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="/kontakt"
+          class="inline-flex items-center justify-center gap-2 bg-white hover:bg-gray-100 text-primary px-8 py-4 rounded-lg font-semibold text-lg transition-all"
+        >
+          Beratung anfordern
+          <ArrowRight class="w-5 h-5" />
+        </a>
+        <a
+          href="tel:+4921519329640"
+          class="inline-flex items-center justify-center gap-2 bg-transparent hover:bg-white/10 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all border-2 border-white"
+        >
+          <Phone class="w-5 h-5" />
+          02151 9329640
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
