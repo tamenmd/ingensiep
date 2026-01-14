@@ -1,0 +1,67 @@
+---
+import { ChevronDown } from 'lucide-astro';
+
+interface Props {
+  title?: string;
+  subtitle?: string;
+  faqs: Array<{
+    question: string;
+    answer: string;
+  }>;
+}
+
+const { title = 'Häufig gestellte Fragen', subtitle, faqs } = Astro.props;
+---
+
+<section class="py-20 lg:py-28 bg-gray-50">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <span class="text-primary font-semibold text-sm uppercase tracking-wider">FAQ</span>
+      <h2 class="text-3xl sm:text-4xl font-bold text-dark mt-4 mb-4">
+        {title}
+      </h2>
+      {subtitle && (
+        <p class="text-dark-500 text-lg max-w-2xl mx-auto">
+          {subtitle}
+        </p>
+      )}
+    </div>
+
+    <div class="space-y-4">
+      {faqs.map((faq, index) => (
+        <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+          <button
+            type="button"
+            class="faq-toggle w-full px-6 py-5 text-left flex items-center justify-between gap-4 hover:bg-gray-50 transition-colors"
+            aria-expanded="false"
+            aria-controls={`faq-answer-${index}`}
+          >
+            <span class="font-semibold text-dark text-lg">{faq.question}</span>
+            <ChevronDown class="w-5 h-5 text-primary flex-shrink-0 faq-icon transition-transform duration-300" />
+          </button>
+          <div
+            id={`faq-answer-${index}`}
+            class="faq-content hidden px-6 pb-5"
+          >
+            <p class="text-dark-500 leading-relaxed">{faq.answer}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll('.faq-toggle').forEach((toggle) => {
+    toggle.addEventListener('click', () => {
+      const content = toggle.nextElementSibling as HTMLElement;
+      const icon = toggle.querySelector('.faq-icon') as HTMLElement;
+      const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+
+      // Toggle current
+      toggle.setAttribute('aria-expanded', (!isExpanded).toString());
+      content.classList.toggle('hidden');
+      icon.style.transform = isExpanded ? 'rotate(0deg)' : 'rotate(180deg)';
+    });
+  });
+</script>

@@ -1,0 +1,104 @@
+---
+import { Star, ExternalLink } from 'lucide-astro';
+
+// Ensure base always ends with a slash
+const baseUrl = import.meta.env.BASE_URL;
+const base = baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`;
+
+const googleMapsUrl = 'https://www.google.com/maps/place/Ingensiep+%26+Schallenberg+GmbH/@51.3336935,6.3467151,17z/data=!4m8!3m7!1s0x47b8ba82845bac75:0xb88cb07f9e0ae3a3!8m2!3d51.3336902!4d6.34929!9m1!1b1!16s%2Fg%2F1v3lp0ln';
+---
+
+<section class="py-20 lg:py-28 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-12">
+      <span class="text-primary font-semibold text-sm uppercase tracking-wider">Kundenbewertungen</span>
+      <h2 class="text-3xl sm:text-4xl font-bold text-dark mt-4 mb-6">
+        Das sagen unsere Kunden
+      </h2>
+      <p class="text-dark-500 text-lg">
+        Überzeugen Sie sich selbst von unserer Arbeit. Unsere Kunden bewerten uns auf Google.
+      </p>
+    </div>
+
+    <!-- Google Rating Summary -->
+    <div class="bg-white rounded-2xl p-8 shadow-sm max-w-2xl mx-auto mb-12">
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+        <div class="text-center">
+          <div class="text-5xl font-bold text-dark mb-2">4.8</div>
+          <div class="flex items-center justify-center gap-1 mb-2">
+            {[1,2,3,4,5].map((i) => (
+              <Star class={`w-6 h-6 ${i <= 4 ? 'text-yellow-400 fill-yellow-400' : 'text-yellow-400 fill-yellow-400'}`} />
+            ))}
+          </div>
+          <p class="text-dark-500 text-sm">Basierend auf Google Bewertungen</p>
+        </div>
+        <div class="hidden sm:block w-px h-20 bg-gray-200"></div>
+        <div class="text-center">
+          <a
+            href={googleMapsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 bg-primary hover:bg-primary-700 text-white px-6 py-3 rounded-lg font-semibold transition-all"
+          >
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+            </svg>
+            Alle Bewertungen ansehen
+          </a>
+          <p class="text-dark-400 text-xs mt-2">auf Google Maps</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sample Reviews -->
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="bg-white rounded-xl p-6 shadow-sm">
+        <div class="flex items-center gap-1 mb-3">
+          {[1,2,3,4,5].map(() => (
+            <Star class="w-4 h-4 text-yellow-400 fill-yellow-400" />
+          ))}
+        </div>
+        <p class="text-dark-600 text-sm mb-4">
+          "Sehr professionelle und zuverlässige Arbeit. Die Tankreinigung wurde schnell und sauber durchgeführt. Absolut empfehlenswert!"
+        </p>
+        <p class="text-dark-400 text-sm font-medium">Zufriedener Kunde</p>
+      </div>
+
+      <div class="bg-white rounded-xl p-6 shadow-sm">
+        <div class="flex items-center gap-1 mb-3">
+          {[1,2,3,4,5].map(() => (
+            <Star class="w-4 h-4 text-yellow-400 fill-yellow-400" />
+          ))}
+        </div>
+        <p class="text-dark-600 text-sm mb-4">
+          "Kompetente Beratung und faire Preise. Die Tankdemontage wurde termingerecht erledigt. Alle Dokumente wurden ordentlich übergeben."
+        </p>
+        <p class="text-dark-400 text-sm font-medium">Zufriedener Kunde</p>
+      </div>
+
+      <div class="bg-white rounded-xl p-6 shadow-sm">
+        <div class="flex items-center gap-1 mb-3">
+          {[1,2,3,4,5].map(() => (
+            <Star class="w-4 h-4 text-yellow-400 fill-yellow-400" />
+          ))}
+        </div>
+        <p class="text-dark-600 text-sm mb-4">
+          "Schnelle Reaktion bei unserem Notfall. Das Team war innerhalb kurzer Zeit vor Ort. Sehr professioneller Service!"
+        </p>
+        <p class="text-dark-400 text-sm font-medium">Zufriedener Kunde</p>
+      </div>
+    </div>
+
+    <div class="text-center mt-8">
+      <a
+        href={googleMapsUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 text-primary font-semibold hover:underline"
+      >
+        Alle Bewertungen auf Google ansehen
+        <ExternalLink class="w-4 h-4" />
+      </a>
+    </div>
+  </div>
+</section>

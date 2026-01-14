@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import GoogleReviews from '../components/GoogleReviews.astro';
 import {
   Shield,
   Award,
@@ -80,21 +81,23 @@ const trustSignals = [
   {
     icon: MapPin,
     title: '100 km Radius',
-    description: 'Krefeld & Umgebung'
+    description: 'Grefrath & Umgebung'
   }
 ];
 
 const regions = [
-  'Krefeld', 'Düsseldorf', 'Duisburg', 'Mönchengladbach', 'Neuss',
+  'Grefrath', 'Krefeld', 'Düsseldorf', 'Duisburg', 'Mönchengladbach', 'Neuss',
   'Moers', 'Viersen', 'Kempen', 'Willich', 'Tönisvorst', 'Kaarst',
   'Meerbusch', 'Ratingen', 'Oberhausen', 'Essen'
 ];
+
+const googleMapsEmbed = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2492.7730777411175!2d6.344890476895478!3d51.33369242106498!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b8ba82845bac75%3A0xb88cb07f9e0ae3a3!2sIngensiep%20%26%20Schallenberg%20GmbH!5e0!3m2!1sde!2sde!4v1749747583498!5m2!1sde!2sde';
 ---
 
 <Layout
-  title="IS-Tankschutz | Tankreinigung & Tanksanierung in Krefeld und Umgebung"
-  description="Ihr zertifizierter Fachbetrieb für Tankreinigung, Tanksanierung und Tankdemontage im Großraum Krefeld. 20+ Jahre Erfahrung, WHG-zertifiziert, 24/7 Notdienst. Jetzt Angebot anfordern!"
-  keywords="Tankreinigung Krefeld, Tanksanierung Düsseldorf, Tankdemontage NRW, Heizöltank reinigen, Öltank entsorgen, WHG Fachbetrieb"
+  title="Ingensiep & Schallenberg | Tankreinigung & Tanksanierung in Grefrath und Umgebung"
+  description="Ihr zertifizierter Fachbetrieb für Tankreinigung, Tanksanierung und Tankdemontage im Großraum Grefrath, Krefeld, Mönchengladbach. 20+ Jahre Erfahrung, WHG-zertifiziert, 24/7 Notdienst."
+  keywords="Tankreinigung Grefrath, Tanksanierung Krefeld, Tankdemontage Mönchengladbach, Heizöltank reinigen, Öltank entsorgen, WHG Fachbetrieb"
 >
   <!-- Hero Section -->
   <section class="relative min-h-[90vh] flex items-center bg-gradient-to-br from-dark-950 via-dark-900 to-dark-950 overflow-hidden">
@@ -121,7 +124,7 @@ const regions = [
           </h1>
 
           <p class="text-lg text-dark-300 mb-8 max-w-xl">
-            Ihr Spezialist für Tankreinigung, Tanksanierung und Tankdemontage im Großraum Krefeld.
+            Ihr Spezialist für Tankreinigung, Tanksanierung und Tankdemontage im Großraum Grefrath, Krefeld und Mönchengladbach.
             Mit über 20 Jahren Erfahrung garantieren wir höchste Qualität und absolute Zuverlässigkeit.
           </p>
 
@@ -134,11 +137,11 @@ const regions = [
               <ArrowRight class="w-5 h-5" />
             </a>
             <a
-              href="tel:+4921519329640"
+              href="tel:+4921584058777"
               class="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all border border-white/20"
             >
               <Phone class="w-5 h-5" />
-              02151 9329640
+              02158 / 40 58 777
             </a>
           </div>
 
@@ -162,11 +165,13 @@ const regions = [
               <input
                 type="text"
                 placeholder="Ihr Name"
+                required
                 class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-dark-400 focus:outline-none focus:border-primary transition-colors"
               />
               <input
                 type="tel"
                 placeholder="Telefonnummer"
+                required
                 class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-dark-400 focus:outline-none focus:border-primary transition-colors"
               />
               <select class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-dark-400 focus:outline-none focus:border-primary transition-colors">
@@ -178,6 +183,18 @@ const regions = [
                 <option value="tankneubau">Tankneubau</option>
                 <option value="lag-wartung">LAG-Wartung</option>
               </select>
+              <div class="flex items-start gap-3">
+                <input
+                  type="checkbox"
+                  id="privacy-hero"
+                  name="privacy"
+                  required
+                  class="mt-1 w-4 h-4 text-primary border-white/20 rounded focus:ring-primary bg-white/10"
+                />
+                <label for="privacy-hero" class="text-xs text-dark-300">
+                  <span class="font-medium">DSGVO-Einverständnis:</span> Ich habe die <a href={`${base}datenschutz`} class="text-primary hover:underline">Datenschutzerklärung</a> gelesen und bin einverstanden. *
+                </label>
+              </div>
               <button
                 type="submit"
                 class="w-full bg-primary hover:bg-primary-700 text-white px-6 py-4 rounded-lg font-semibold transition-all hover:shadow-lg"
@@ -319,7 +336,7 @@ const regions = [
           Wir sind in Ihrer Nähe
         </h2>
         <p class="text-dark-500 text-lg">
-          Von Krefeld aus bedienen wir den gesamten Großraum Niederrhein und das Ruhrgebiet.
+          Von Grefrath aus bedienen wir den gesamten Großraum Niederrhein und das Ruhrgebiet.
           Schnell, zuverlässig und zu fairen Konditionen.
         </p>
       </div>
@@ -332,16 +349,25 @@ const regions = [
         ))}
       </div>
 
-      <!-- Google Maps Placeholder -->
-      <div class="bg-gray-200 rounded-2xl h-96 flex items-center justify-center">
-        <div class="text-center">
-          <MapPin class="w-12 h-12 text-dark-400 mx-auto mb-4" />
-          <p class="text-dark-500">Google Maps Einbindung</p>
-          <p class="text-dark-400 text-sm">Krefeld und 100km Umkreis</p>
-        </div>
+      <!-- Google Maps Embed -->
+      <div class="rounded-2xl overflow-hidden shadow-lg">
+        <iframe
+          src={googleMapsEmbed}
+          width="100%"
+          height="400"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Standort Ingensiep & Schallenberg GmbH"
+          class="w-full"
+        ></iframe>
       </div>
     </div>
   </section>
+
+  <!-- Google Reviews Section -->
+  <GoogleReviews />
 
   <!-- CTA Section -->
   <section class="py-20 lg:py-32 bg-primary">
@@ -362,11 +388,11 @@ const regions = [
           <ArrowRight class="w-5 h-5" />
         </a>
         <a
-          href="tel:+4921519329640"
+          href="tel:+4921584058777"
           class="inline-flex items-center justify-center gap-2 bg-transparent hover:bg-white/10 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all border-2 border-white"
         >
           <Phone class="w-5 h-5" />
-          02151 9329640
+          02158 / 40 58 777
         </a>
       </div>
     </div>

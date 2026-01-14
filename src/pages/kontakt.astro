@@ -6,7 +6,8 @@ import {
   MapPin,
   Clock,
   Send,
-  MessageSquare
+  MessageSquare,
+  Printer
 } from 'lucide-astro';
 
 // Ensure base always ends with a slash
@@ -22,12 +23,14 @@ const services = [
   { value: 'lag-wartung', label: 'LAG-Wartung' },
   { value: 'sonstiges', label: 'Sonstiges' }
 ];
+
+const googleMapsEmbed = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2492.7730777411175!2d6.344890476895478!3d51.33369242106498!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b8ba82845bac75%3A0xb88cb07f9e0ae3a3!2sIngensiep%20%26%20Schallenberg%20GmbH!5e0!3m2!1sde!2sde!4v1749747583498!5m2!1sde!2sde';
 ---
 
 <Layout
-  title="Kontakt | Angebot anfordern | IS-Tankschutz Krefeld"
-  description="Kontaktieren Sie IS-Tankschutz für ein unverbindliches Angebot. Tankreinigung, Tanksanierung und mehr in Krefeld und Umgebung. Tel: 02151 9329640"
-  keywords="Kontakt IS-Tankschutz, Tankschutz Krefeld Kontakt, Angebot Tankreinigung, Beratung Tankservice"
+  title="Kontakt | Angebot anfordern | Ingensiep & Schallenberg Grefrath"
+  description="Kontaktieren Sie Ingensiep & Schallenberg für ein unverbindliches Angebot. Tankreinigung, Tanksanierung und mehr in Grefrath, Krefeld und Umgebung. Tel: 02158 4058777"
+  keywords="Kontakt Ingensiep Schallenberg, Tankschutz Grefrath Kontakt, Angebot Tankreinigung, Beratung Tankservice, Krefeld, Mönchengladbach"
 >
   <!-- Hero Section -->
   <section class="bg-gradient-to-br from-dark-950 via-dark-900 to-dark-950 py-20 lg:py-28">
@@ -61,10 +64,25 @@ const services = [
               </div>
               <div>
                 <h3 class="font-semibold text-dark mb-1">Telefon</h3>
-                <a href="tel:+4921519329640" class="text-dark-500 hover:text-primary transition-colors">
-                  02151 9329640
+                <a href="tel:+4921584058777" class="text-dark-500 hover:text-primary transition-colors block">
+                  02158 / 40 58 777 <span class="text-dark-400 text-sm">(Grefrath)</span>
                 </a>
-                <p class="text-sm text-dark-400 mt-1">Mo-Fr: 7:00 - 18:00 Uhr</p>
+                <a href="tel:+4921517903706" class="text-dark-500 hover:text-primary transition-colors block text-sm">
+                  02151 / 79 03 706 <span class="text-dark-400">(Krefeld)</span>
+                </a>
+                <a href="tel:+4921669293930" class="text-dark-500 hover:text-primary transition-colors block text-sm">
+                  02166 / 92 93 930 <span class="text-dark-400">(Mönchengladbach)</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                <Printer class="w-6 h-6 text-primary" />
+              </div>
+              <div>
+                <h3 class="font-semibold text-dark mb-1">Fax</h3>
+                <p class="text-dark-500">02158 / 40 82 617</p>
               </div>
             </div>
 
@@ -88,9 +106,9 @@ const services = [
               <div>
                 <h3 class="font-semibold text-dark mb-1">Adresse</h3>
                 <p class="text-dark-500">
-                  IS-Tankschutz<br />
-                  47803 Krefeld<br />
-                  Nordrhein-Westfalen
+                  Ingensiep & Schallenberg GmbH<br />
+                  Industriestr. 2a<br />
+                  47929 Grefrath
                 </p>
               </div>
             </div>
@@ -102,7 +120,8 @@ const services = [
               <div>
                 <h3 class="font-semibold text-dark mb-1">Öffnungszeiten</h3>
                 <p class="text-dark-500">
-                  Mo - Fr: 7:00 - 18:00 Uhr<br />
+                  Mo - Do: 9:00 - 15:00 Uhr<br />
+                  Fr: 9:00 - 13:30 Uhr<br />
                   <span class="text-primary font-medium">Notdienst: 24/7</span>
                 </p>
               </div>
@@ -116,11 +135,11 @@ const services = [
               Bei Ölaustritt oder anderen Notfällen erreichen Sie uns rund um die Uhr.
             </p>
             <a
-              href="tel:+4921519329640"
+              href="tel:+4921584058777"
               class="inline-flex items-center gap-2 bg-white text-primary px-4 py-2 rounded-lg font-semibold text-sm hover:bg-gray-100 transition-colors"
             >
               <Phone class="w-4 h-4" />
-              02151 9329640
+              02158 / 40 58 777
             </a>
           </div>
         </div>
@@ -230,7 +249,7 @@ const services = [
                   class="mt-1 w-4 h-4 text-primary border-gray-300 rounded focus:ring-primary"
                 />
                 <label for="privacy" class="text-sm text-dark-500">
-                  Ich habe die <a href={`${base}datenschutz`} class="text-primary hover:underline">Datenschutzerklärung</a> gelesen und bin mit der Verarbeitung meiner Daten einverstanden. *
+                  <span class="font-medium">DSGVO-Einverständnis:</span> Ich habe die <a href={`${base}datenschutz`} class="text-primary hover:underline">Datenschutzerklärung</a> gelesen und bin mit der Verarbeitung meiner Daten einverstanden. *
                 </label>
               </div>
 
@@ -261,18 +280,24 @@ const services = [
           Wir kommen zu Ihnen
         </h2>
         <p class="text-dark-500 text-lg">
-          Von Krefeld aus bedienen wir den gesamten Großraum im Umkreis von 100 km.
-          Düsseldorf, Duisburg, Mönchengladbach, Neuss und alle umliegenden Städte.
+          Von Grefrath aus bedienen wir den gesamten Großraum im Umkreis von 100 km.
+          Krefeld, Düsseldorf, Duisburg, Mönchengladbach, Neuss und alle umliegenden Städte.
         </p>
       </div>
 
-      <!-- Google Maps Placeholder -->
-      <div class="bg-gray-200 rounded-2xl h-96 flex items-center justify-center">
-        <div class="text-center">
-          <MapPin class="w-12 h-12 text-dark-400 mx-auto mb-4" />
-          <p class="text-dark-500 font-medium">Google Maps Einbindung</p>
-          <p class="text-dark-400 text-sm">IS-Tankschutz, 47803 Krefeld</p>
-        </div>
+      <!-- Google Maps Embed -->
+      <div class="rounded-2xl overflow-hidden shadow-lg">
+        <iframe
+          src={googleMapsEmbed}
+          width="100%"
+          height="450"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Standort Ingensiep & Schallenberg GmbH"
+          class="w-full"
+        ></iframe>
       </div>
     </div>
   </section>

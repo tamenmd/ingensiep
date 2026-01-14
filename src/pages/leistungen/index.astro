@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import FAQ from '../../components/FAQ.astro';
 import {
   Droplets,
   Wrench,
@@ -60,12 +61,39 @@ const services = [
     features: ['Dichtigkeitsprüfung', 'Sensorcheck', 'Wartungsprotokoll', 'Reparatur']
   }
 ];
+
+const faqs = [
+  {
+    question: 'Wie oft sollte eine Tankreinigung durchgeführt werden?',
+    answer: 'Wir empfehlen eine Tankreinigung alle 5-7 Jahre. Bei älteren Tanks oder bei erkennbaren Verunreinigungen des Heizöls kann eine häufigere Reinigung sinnvoll sein. Eine regelmäßige Reinigung verlängert die Lebensdauer Ihres Tanks erheblich.'
+  },
+  {
+    question: 'Was kostet eine Tankreinigung oder Tanksanierung?',
+    answer: 'Die Kosten hängen von verschiedenen Faktoren ab, wie Tankgröße, Verschmutzungsgrad und Zugänglichkeit. Wir erstellen Ihnen gerne ein individuelles, kostenloses Angebot. Kontaktieren Sie uns telefonisch oder über unser Kontaktformular.'
+  },
+  {
+    question: 'Sind Sie ein WHG-zertifizierter Fachbetrieb?',
+    answer: 'Ja, wir sind ein nach § 62 AwSV (ehemals WHG) zertifizierter Fachbetrieb. Diese Zertifizierung ist Voraussetzung für alle Arbeiten an Tankanlagen, die mit wassergefährdenden Stoffen in Berührung kommen.'
+  },
+  {
+    question: 'Wie lange dauert eine Tankdemontage?',
+    answer: 'Eine Tankdemontage dauert in der Regel 1-2 Tage, abhängig von der Größe des Tanks und den örtlichen Gegebenheiten. Nach der Demontage kümmern wir uns um die fachgerechte Entsorgung und alle erforderlichen Behördengänge.'
+  },
+  {
+    question: 'Bieten Sie einen Notdienst an?',
+    answer: 'Ja, wir bieten einen 24/7 Notdienst für dringende Fälle wie Ölaustritt oder akute Tankschäden. Rufen Sie uns im Notfall jederzeit unter 02158 / 40 58 777 an.'
+  },
+  {
+    question: 'In welchen Regionen sind Sie tätig?',
+    answer: 'Wir bedienen von Grefrath aus den gesamten Großraum im Umkreis von 100 km. Dazu gehören Krefeld, Düsseldorf, Duisburg, Mönchengladbach, Neuss, Moers, Viersen und viele weitere Städte in NRW.'
+  }
+];
 ---
 
 <Layout
-  title="Unsere Leistungen | Tankreinigung, Sanierung & Demontage | IS-Tankschutz"
-  description="Komplettservice für Ihre Tankanlage: Tankreinigung, Tanksanierung, Tankdemontage, Stilllegung, Neubau und LAG-Wartung. WHG-zertifizierter Fachbetrieb in Krefeld."
-  keywords="Tankreinigung, Tanksanierung, Tankdemontage, Tankstilllegung, Tankneubau, LAG Wartung, Heizöltank Service, Krefeld, Düsseldorf, NRW"
+  title="Unsere Leistungen | Tankreinigung, Sanierung & Demontage | Ingensiep & Schallenberg"
+  description="Komplettservice für Ihre Tankanlage: Tankreinigung, Tanksanierung, Tankdemontage, Stilllegung, Neubau und LAG-Wartung. WHG-zertifizierter Fachbetrieb in Grefrath, Krefeld, Mönchengladbach."
+  keywords="Tankreinigung, Tanksanierung, Tankdemontage, Tankstilllegung, Tankneubau, LAG Wartung, Heizöltank Service, Grefrath, Krefeld, Mönchengladbach, NRW"
 >
   <!-- Hero Section -->
   <section class="bg-gradient-to-br from-dark-950 via-dark-900 to-dark-950 py-20 lg:py-28">
@@ -180,13 +208,20 @@ const services = [
           <ArrowRight class="w-5 h-5" />
         </a>
         <a
-          href="tel:+4921519329640"
+          href="tel:+4921584058777"
           class="inline-flex items-center justify-center gap-2 bg-transparent hover:bg-white/10 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all border-2 border-white"
         >
           <Phone class="w-5 h-5" />
-          02151 9329640
+          02158 / 40 58 777
         </a>
       </div>
     </div>
   </section>
+
+  <!-- FAQ Section -->
+  <FAQ
+    faqs={faqs}
+    title="Häufig gestellte Fragen"
+    subtitle="Hier finden Sie Antworten auf die wichtigsten Fragen zu unseren Leistungen."
+  />
 </Layout>
