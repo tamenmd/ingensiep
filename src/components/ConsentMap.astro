@@ -1,0 +1,129 @@
+---
+/**
+ * Google Maps mit Cookie-Consent
+ * Zeigt einen Platzhalter bis der Nutzer "Externe Medien" akzeptiert hat
+ */
+import { MapPin } from 'lucide-astro';
+
+interface Props {
+  src: string;
+  title?: string;
+  height?: string;
+  class?: string;
+}
+
+const {
+  src,
+  title = 'Karte',
+  height = '450',
+  class: className = ''
+} = Astro.props;
+---
+
+<div class={`relative ${className}`} data-consent-map>
+  <!-- Placeholder (shown when no consent) -->
+  <div
+    data-consent-placeholder
+    class="bg-gray-100 rounded-2xl flex flex-col items-center justify-center text-center p-8"
+    style={`height: ${height}px;`}
+  >
+    <div class="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center mb-4">
+      <MapPin class="w-8 h-8 text-gray-400" />
+    </div>
+    <h3 class="text-lg font-semibold text-dark mb-2">Google Maps</h3>
+    <p class="text-dark-500 text-sm mb-6 max-w-md">
+      Zum Laden der Karte muessen Sie der Verwendung externer Medien zustimmen.
+      Dabei werden Daten an Google uebertragen.
+    </p>
+    <button
+      type="button"
+      data-consent-accept-external
+      class="inline-flex items-center gap-2 bg-primary hover:bg-primary-700 text-white px-6 py-3 rounded-lg font-medium transition-colors"
+    >
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+      Externe Medien aktivieren
+    </button>
+    <button
+      type="button"
+      data-cookie-settings
+      class="text-dark-400 hover:text-primary text-sm mt-3 underline"
+    >
+      Mehr Optionen
+    </button>
+  </div>
+
+  <!-- Actual iframe (hidden until consent, then src is set) -->
+  <iframe
+    data-consent-external
+    data-consent-src={src}
+    class="hidden w-full rounded-2xl"
+    width="100%"
+    height={height}
+    style="border:0;"
+    allowfullscreen=""
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"
+    title={title}
+  ></iframe>
+</div>
+
+<script>
+  // Handle "Externe Medien aktivieren" button clicks
+  document.querySelectorAll('[data-consent-accept-external]').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      // Check if cookieConsent API exists
+      if (window.cookieConsent) {
+        // Get current consent and update external
+        const consent = window.cookieConsent.getConsent();
+        consent.external = true;
+
+        // Save to localStorage directly
+        consent.timestamp = new Date().toISOString();
+        try {
+          localStorage.setItem('cookie_consent', JSON.stringify(consent));
+        } catch (e) {
+          console.warn('Could not save consent:', e);
+        }
+
+        // Load external media
+        document.querySelectorAll('[data-consent-src]').forEach(function(el) {
+          const src = el.getAttribute('data-consent-src');
+          if (src) {
+            el.setAttribute('src', src);
+            el.removeAttribute('data-consent-src');
+          }
+        });
+
+        // Show iframes, hide placeholders
+        document.querySelectorAll('[data-consent-external]').forEach(function(el) {
+          el.classList.remove('hidden');
+        });
+        document.querySelectorAll('[data-consent-placeholder]').forEach(function(el) {
+          el.classList.add('hidden');
+        });
+      }
+    });
+  });
+
+  // Check on page load if consent already given
+  document.addEventListener('DOMContentLoaded', function() {
+    if (window.cookieConsent && window.cookieConsent.hasConsent('external')) {
+      // Show iframes, hide placeholders
+      document.querySelectorAll('[data-consent-src]').forEach(function(el) {
+        const src = el.getAttribute('data-consent-src');
+        if (src) {
+          el.setAttribute('src', src);
+          el.removeAttribute('data-consent-src');
+        }
+      });
+      document.querySelectorAll('[data-consent-external]').forEach(function(el) {
+        el.classList.remove('hidden');
+      });
+      document.querySelectorAll('[data-consent-placeholder]').forEach(function(el) {
+        el.classList.add('hidden');
+      });
+    }
+  });
+</script>

@@ -99,6 +99,13 @@ const base = baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`;
         <div class="flex items-center gap-6">
           <a href={`${base}impressum`} class="text-dark-400 hover:text-primary transition-colors text-sm">Impressum</a>
           <a href={`${base}datenschutz`} class="text-dark-400 hover:text-primary transition-colors text-sm">Datenschutz</a>
+          <button
+            type="button"
+            data-cookie-settings
+            class="text-dark-400 hover:text-primary transition-colors text-sm cursor-pointer"
+          >
+            Cookie-Einstellungen
+          </button>
         </div>
       </div>
     </div>
