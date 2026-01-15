@@ -107,6 +107,21 @@ const canonicalUrl = canonical ? `${siteUrl}${canonical}` : `${siteUrl}${Astro.u
     }
   </script>
 </head>
+<!-- Google Analytics (Beispiel) -->
+<script>
+  window.cookieConsent.onAnalytics(function() {
+    // GA4 Script laden
+    var script = document.createElement('script');
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX';
+    script.async = true;
+    document.head.appendChild(script);
+
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-N9B7XTFTPE');
+  });
+</script>
 <body class="min-h-screen flex flex-col bg-white text-dark antialiased">
   <Header />
 
