@@ -179,6 +179,185 @@ export const services = [
 ];
 
 // =========================================
+// DETAILLIERTE LEISTUNGS-INFORMATIONEN FÜR UNTERSEITEN
+// =========================================
+export const serviceDetails = {
+  tankreinigung: {
+    seo: {
+      title: 'Tankreinigung Grefrath | Professionelle Heizöltank Reinigung | IS-Tankschutz',
+      description: 'Professionelle Tankreinigung in Grefrath und Umgebung. Entfernung von Ölschlamm und Ablagerungen, verlängerte Tanklebensdauer. WHG-zertifizierter Fachbetrieb. Jetzt Termin vereinbaren!',
+      keywords: 'Tankreinigung Grefrath, Heizöltank reinigen, Ölschlamm entfernen, Tank säubern, Krefeld, Düsseldorf, Mönchengladbach, NRW',
+    },
+    heroSubtitle: 'Schützen Sie Ihre Heizungsanlage vor Schäden durch Ablagerungen und Ölschlamm. Unsere professionelle Tankreinigung verlängert die Lebensdauer Ihres Tanks und sichert eine optimale Heizölqualität.',
+    benefits: [
+      'Verlängerung der Tanklebensdauer',
+      'Verbesserung der Heizölqualität',
+      'Vermeidung von Heizungsausfällen',
+      'Schutz vor Korrosionsschäden',
+      'Frühzeitige Schadenserkennung',
+      'Dokumentation für Versicherungen',
+    ],
+    process: [
+      { title: 'Entleerung', description: 'Absaugen des Restöls und der Schlammablagerungen mit Spezialfahrzeug' },
+      { title: 'Reinigung', description: 'Gründliche Innenreinigung des Tanks mit Hochdrucktechnik' },
+      { title: 'Inspektion', description: 'Sichtprüfung auf Risse, Korrosion und Undichtigkeiten' },
+      { title: 'Befüllung', description: 'Rückführung des gereinigten Öls oder Neubefüllung' },
+    ],
+    recommendation: 'Lassen Sie Ihren Tank alle 5-7 Jahre professionell reinigen. Bei älteren Tanks oder sichtbaren Verunreinigungen auch häufiger.',
+    risks: [
+      'Verstopfte Filter und Leitungen',
+      'Beschädigung der Brennerdüse',
+      'Korrosion der Tankinnenwand',
+      'Heizungsausfall im Winter',
+    ],
+  },
+  tanksanierung: {
+    seo: {
+      title: 'Tanksanierung Grefrath | Professionelle Tankbeschichtung | IS-Tankschutz',
+      description: 'Fachgerechte Tanksanierung und Innenbeschichtung in Grefrath. Bis zu 60% günstiger als Neukauf. WHG-zertifizierter Fachbetrieb mit Garantie. Jetzt beraten lassen!',
+      keywords: 'Tanksanierung Grefrath, Tankbeschichtung, Tankinnenbeschichtung, Tank sanieren, Krefeld, Düsseldorf, Mönchengladbach, NRW',
+    },
+    heroSubtitle: 'Ihr Tank zeigt Alterserscheinungen? Eine Sanierung ist oft die bessere und kostengünstigere Alternative zum Neukauf. Mit unserer hochwertigen Innenbeschichtung machen wir Ihren Tank wieder fit für die Zukunft.',
+    benefits: [
+      'Bis zu 60% günstiger als ein neuer Tank',
+      'Verlängerung der Nutzungsdauer um 15-25 Jahre',
+      'Hochwertige, WHG-konforme Beschichtung',
+      'Schutz vor Korrosion und Undichtigkeiten',
+      'Alle Arbeiten mit Garantie',
+      'Vollständige Dokumentation',
+    ],
+    process: [
+      { title: 'Begutachtung', description: 'Ausführliche Prüfung des Tankzustands vor Ort' },
+      { title: 'Reinigung', description: 'Gründliche Entfernung aller Ablagerungen und Rost' },
+      { title: 'Reparatur', description: 'Beseitigung von Rissen und Schadstellen' },
+      { title: 'Beschichtung', description: 'Auftragen der hochwertigen Innenbeschichtung' },
+      { title: 'Abnahme', description: 'Qualitätskontrolle und Dokumentation' },
+    ],
+    stats: [
+      { value: '60%', label: 'Kostenersparnis' },
+      { value: '1-2', label: 'Tage Dauer' },
+      { value: '15+', label: 'Jahre Schutz' },
+    ],
+  },
+  tankdemontage: {
+    seo: {
+      title: 'Tankdemontage Grefrath | Öltank fachgerecht entsorgen | IS-Tankschutz',
+      description: 'Professionelle Tankdemontage und Entsorgung in Grefrath. WHG-zertifiziert, alle Formalitäten inklusive. Umweltgerecht und sicher. Jetzt Angebot anfordern!',
+      keywords: 'Tankdemontage Grefrath, Öltank entsorgen, Tank abbauen, Tankentsorgung, Krefeld, Düsseldorf, Mönchengladbach, NRW',
+    },
+    heroSubtitle: 'Sie benötigen Ihren Heizöltank nicht mehr? Wir übernehmen die komplette Demontage – von der Entleerung über den fachgerechten Abbau bis zur umweltgerechten Entsorgung.',
+    benefits: [
+      'Komplettservice aus einer Hand',
+      'Alle behördlichen Formalitäten inklusive',
+      'Umweltgerechte Entsorgung mit Nachweis',
+      'Saubere Hinterlassung des Tankraums',
+      'WHG-zertifizierte Fachkräfte',
+      'Transparente Festpreise',
+    ],
+    process: [
+      { title: 'Entleerung', description: 'Sichere Absaugung des Restöls und Reinigung' },
+      { title: 'Demontage', description: 'Fachgerechter Abbau des Tanks und aller Leitungen' },
+      { title: 'Entsorgung', description: 'Umweltgerechte Entsorgung mit offiziellem Nachweis' },
+      { title: 'Abmeldung', description: 'Stilllegung bei der zuständigen Behörde' },
+    ],
+    included: [
+      'Restölabsaugung und -entsorgung',
+      'Tankreinigung vor Demontage',
+      'Zerlegung und Abtransport',
+      'Entsorgungsnachweis',
+      'Behördliche Stilllegung',
+      'Reinigung des Tankraums',
+    ],
+  },
+  tankstilllegung: {
+    seo: {
+      title: 'Tankstilllegung Grefrath | Tank stilllegen nach Vorschrift | IS-Tankschutz',
+      description: 'Fachgerechte Tankstilllegung in Grefrath. Ordnungsgemäße Stilllegung nach WHG mit kompletter Dokumentation. Behördenanmeldung inklusive. Jetzt informieren!',
+      keywords: 'Tankstilllegung Grefrath, Tank stilllegen, Tankanlage stilllegen, Krefeld, Düsseldorf, Mönchengladbach, NRW',
+    },
+    heroSubtitle: 'Sie möchten Ihren Heizöltank stilllegen, aber nicht entfernen? Wir führen die ordnungsgemäße Stilllegung nach behördlichen Vorschriften durch – sicher und dokumentiert.',
+    benefits: [
+      'Kostengünstige Alternative zur Demontage',
+      'Ordnungsgemäß nach WHG-Vorschriften',
+      'Komplette behördliche Dokumentation',
+      'Sichere Verfüllung des Tanks',
+      'Keine baulichen Veränderungen nötig',
+      'Schnelle Abwicklung',
+    ],
+    process: [
+      { title: 'Entleerung', description: 'Komplette Entleerung und Reinigung des Tanks' },
+      { title: 'Inertisierung', description: 'Sicherung gegen Restgase und Geruchsbildung' },
+      { title: 'Verfüllung', description: 'Fachgerechte Verfüllung mit zugelassenem Material' },
+      { title: 'Dokumentation', description: 'Stilllegungsprotokoll für Behörden' },
+    ],
+    requirements: [
+      'Tank muss vollständig entleert sein',
+      'Keine Undichtigkeiten am Tank',
+      'Zugänglichkeit für Arbeiten',
+      'Behördliche Genehmigung (wird von uns beantragt)',
+    ],
+  },
+  tankneubau: {
+    seo: {
+      title: 'Tankneubau Grefrath | Neue Heizöltankanlage | IS-Tankschutz',
+      description: 'Planung und Installation neuer Tankanlagen in Grefrath. Moderne Technik, WHG-konform, kompletter Service. Von der Beratung bis zur Inbetriebnahme. Jetzt anfragen!',
+      keywords: 'Tankneubau Grefrath, Heizöltank neu, Tank installieren, Tankanlage, Krefeld, Düsseldorf, Mönchengladbach, NRW',
+    },
+    heroSubtitle: 'Sie benötigen eine neue Tankanlage? Wir planen und installieren moderne Heizöltanks nach aktuellen Vorschriften – von der Beratung über die Montage bis zur Inbetriebnahme.',
+    benefits: [
+      'Komplette Planung und Beratung',
+      'Modernste Tanksysteme',
+      'WHG-konforme Installation',
+      'Alle Genehmigungen inklusive',
+      'Einweisung in die Bedienung',
+      'Wartungsverträge möglich',
+    ],
+    process: [
+      { title: 'Beratung', description: 'Bedarfsermittlung und Standortprüfung vor Ort' },
+      { title: 'Planung', description: 'Auswahl des passenden Tanksystems und Angebotserstellung' },
+      { title: 'Installation', description: 'Fachgerechte Montage durch zertifizierte Mitarbeiter' },
+      { title: 'Abnahme', description: 'Inbetriebnahme, Einweisung und Dokumentation' },
+    ],
+    tankTypes: [
+      { name: 'Erdtank', description: 'Unterirdische Lagerung, platzsparend' },
+      { name: 'Kellertank', description: 'Klassische Lösung für den Heizungskeller' },
+      { name: 'Batterietank', description: 'Flexible Lösung aus mehreren Einheiten' },
+      { name: 'Doppelwandtank', description: 'Maximale Sicherheit durch zwei Wandungen' },
+    ],
+  },
+  'lag-wartung': {
+    seo: {
+      title: 'LAG-Wartung Grefrath | Leckschutzauskleidung prüfen | IS-Tankschutz',
+      description: 'Professionelle LAG-Wartung in Grefrath. Regelmäßige Prüfung Ihrer Leckschutzauskleidung für maximale Sicherheit. WHG-Fachbetrieb. Jetzt Wartungstermin vereinbaren!',
+      keywords: 'LAG-Wartung Grefrath, Leckschutzauskleidung, LAG Prüfung, Tankwartung, Krefeld, Düsseldorf, Mönchengladbach, NRW',
+    },
+    heroSubtitle: 'Die Leckschutzauskleidung (LAG) ist Ihre Versicherung gegen Umweltschäden. Regelmäßige Wartung stellt sicher, dass im Ernstfall alles funktioniert.',
+    benefits: [
+      'Frühzeitige Erkennung von Undichtigkeiten',
+      'Schutz vor teuren Umweltschäden',
+      'Erfüllung gesetzlicher Prüfpflichten',
+      'Wartungsprotokoll für Versicherungen',
+      'Verlängerung der LAG-Lebensdauer',
+      'Schnelle Reparatur bei Defekten',
+    ],
+    process: [
+      { title: 'Sichtprüfung', description: 'Kontrolle der LAG auf Beschädigungen und Verschleiß' },
+      { title: 'Funktionstest', description: 'Überprüfung der Sensoren und Meldeeinrichtungen' },
+      { title: 'Dichtigkeitsprüfung', description: 'Test der Dichtigkeit der Schutzauskleidung' },
+      { title: 'Dokumentation', description: 'Erstellung des Wartungsprotokolls' },
+    ],
+    interval: 'Die LAG-Wartung sollte alle 2-5 Jahre durchgeführt werden, abhängig vom Tanktyp und den örtlichen Vorschriften.',
+    components: [
+      'Leckschutzauskleidung (Folie/Wanne)',
+      'Leckanzeigegerät',
+      'Füllstandssensoren',
+      'Überfüllsicherung',
+      'Grenzwertgeber',
+    ],
+  },
+};
+
+// =========================================
 // FAQ (HÄUFIGE FRAGEN)
 // =========================================
 export const faqs = [
