@@ -114,25 +114,25 @@ const faqs = [
   <!-- Services Grid -->
   <section class="py-20 lg:py-28 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid md:grid-cols-2 gap-8">
+      <div class="grid md:grid-cols-2 gap-6 sm:gap-8">
         {services.map((service) => (
-          <article class="bg-gray-50 rounded-2xl p-8 hover:shadow-xl hover:shadow-gray-200/50 transition-all group">
-            <div class="flex items-start gap-6">
-              <div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-primary transition-colors">
-                <service.icon class="w-8 h-8 text-primary group-hover:text-white transition-colors" />
+          <article class="bg-gray-50 rounded-2xl p-5 sm:p-8 hover:shadow-xl hover:shadow-gray-200/50 transition-all group">
+            <div class="flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-6">
+              <div class="w-14 h-14 sm:w-16 sm:h-16 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-primary transition-colors">
+                <service.icon class="w-7 h-7 sm:w-8 sm:h-8 text-primary group-hover:text-white transition-colors" />
               </div>
               <div class="flex-grow">
-                <h2 class="text-2xl font-bold text-dark mb-3 group-hover:text-primary transition-colors">
+                <h2 class="text-xl sm:text-2xl font-bold text-dark mb-2 sm:mb-3 group-hover:text-primary transition-colors">
                   {service.title}
                 </h2>
-                <p class="text-dark-500 mb-6">
+                <p class="text-dark-500 text-sm sm:text-base mb-4 sm:mb-6">
                   {service.description}
                 </p>
-                <ul class="grid grid-cols-2 gap-2 mb-6">
+                <ul class="flex flex-col gap-2 mb-4 sm:mb-6">
                   {service.features.map((feature) => (
                     <li class="flex items-center gap-2 text-sm text-dark-600">
                       <CheckCircle class="w-4 h-4 text-primary flex-shrink-0" />
-                      {feature}
+                      <span>{feature}</span>
                     </li>
                   ))}
                 </ul>
@@ -164,26 +164,26 @@ const faqs = [
         </p>
       </div>
 
-      <div class="grid md:grid-cols-4 gap-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8">
         <div class="text-center">
-          <div class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">1</div>
-          <h3 class="text-lg font-bold text-dark mb-2">Anfrage</h3>
-          <p class="text-dark-500 text-sm">Kontaktieren Sie uns telefonisch oder über unser Formular</p>
+          <div class="w-12 h-12 sm:w-16 sm:h-16 bg-primary text-white rounded-full flex items-center justify-center text-lg sm:text-2xl font-bold mx-auto mb-3 sm:mb-4">1</div>
+          <h3 class="text-base sm:text-lg font-bold text-dark mb-1 sm:mb-2">Anfrage</h3>
+          <p class="text-dark-500 text-xs sm:text-sm">Kontaktieren Sie uns telefonisch oder über unser Formular</p>
         </div>
         <div class="text-center">
-          <div class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">2</div>
-          <h3 class="text-lg font-bold text-dark mb-2">Beratung</h3>
-          <p class="text-dark-500 text-sm">Wir besprechen Ihre Anforderungen und erstellen ein Angebot</p>
+          <div class="w-12 h-12 sm:w-16 sm:h-16 bg-primary text-white rounded-full flex items-center justify-center text-lg sm:text-2xl font-bold mx-auto mb-3 sm:mb-4">2</div>
+          <h3 class="text-base sm:text-lg font-bold text-dark mb-1 sm:mb-2">Beratung</h3>
+          <p class="text-dark-500 text-xs sm:text-sm">Wir besprechen Ihre Anforderungen und erstellen ein Angebot</p>
         </div>
         <div class="text-center">
-          <div class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">3</div>
-          <h3 class="text-lg font-bold text-dark mb-2">Ausführung</h3>
-          <p class="text-dark-500 text-sm">Unsere Fachkräfte führen die Arbeiten termingerecht durch</p>
+          <div class="w-12 h-12 sm:w-16 sm:h-16 bg-primary text-white rounded-full flex items-center justify-center text-lg sm:text-2xl font-bold mx-auto mb-3 sm:mb-4">3</div>
+          <h3 class="text-base sm:text-lg font-bold text-dark mb-1 sm:mb-2">Ausführung</h3>
+          <p class="text-dark-500 text-xs sm:text-sm">Unsere Fachkräfte führen die Arbeiten termingerecht durch</p>
         </div>
         <div class="text-center">
-          <div class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">4</div>
-          <h3 class="text-lg font-bold text-dark mb-2">Abnahme</h3>
-          <p class="text-dark-500 text-sm">Sie erhalten alle Dokumente und Nachweise</p>
+          <div class="w-12 h-12 sm:w-16 sm:h-16 bg-primary text-white rounded-full flex items-center justify-center text-lg sm:text-2xl font-bold mx-auto mb-3 sm:mb-4">4</div>
+          <h3 class="text-base sm:text-lg font-bold text-dark mb-1 sm:mb-2">Abnahme</h3>
+          <p class="text-dark-500 text-xs sm:text-sm">Sie erhalten alle Dokumente und Nachweise</p>
         </div>
       </div>
     </div>

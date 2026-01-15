@@ -27,23 +27,23 @@ const { title = 'Häufig gestellte Fragen', subtitle, faqs } = Astro.props;
       )}
     </div>
 
-    <div class="space-y-4">
+    <div class="space-y-3 sm:space-y-4">
       {faqs.map((faq, index) => (
         <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
           <button
             type="button"
-            class="faq-toggle w-full px-6 py-5 text-left flex items-center justify-between gap-4 hover:bg-gray-50 transition-colors"
+            class="faq-toggle w-full px-4 sm:px-6 py-4 sm:py-5 text-left flex items-center justify-between gap-3 sm:gap-4 hover:bg-gray-50 transition-colors"
             aria-expanded="false"
             aria-controls={`faq-answer-${index}`}
           >
-            <span class="font-semibold text-dark text-lg">{faq.question}</span>
+            <span class="font-semibold text-dark text-base sm:text-lg">{faq.question}</span>
             <ChevronDown class="w-5 h-5 text-primary flex-shrink-0 faq-icon transition-transform duration-300" />
           </button>
           <div
             id={`faq-answer-${index}`}
-            class="faq-content hidden px-6 pb-5"
+            class="faq-content hidden px-4 sm:px-6 pb-4 sm:pb-5"
           >
-            <p class="text-dark-500 leading-relaxed">{faq.answer}</p>
+            <p class="text-dark-500 leading-relaxed text-sm sm:text-base">{faq.answer}</p>
           </div>
         </div>
       ))}
