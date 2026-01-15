@@ -7,12 +7,24 @@ const baseUrl = import.meta.env.BASE_URL;
 const base = baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`;
 
 const navItems = [
-  { href: base, label: 'Home' },
-  { href: `${base}leistungen`, label: 'Leistungen' },
-  { href: `${base}kontakt`, label: 'Kontakt' },
+  { href: base, label: 'Home', exact: true },
+  { href: `${base}leistungen`, label: 'Leistungen', exact: false },
+  { href: `${base}kontakt`, label: 'Kontakt', exact: true },
 ];
 
 const currentPath = Astro.url.pathname;
+
+// Helper function to check if nav item is active
+function isActive(item: { href: string; exact: boolean }) {
+  if (item.exact) {
+    // For exact match, compare normalized paths
+    const normalizedCurrent = currentPath.endsWith('/') ? currentPath : `${currentPath}/`;
+    const normalizedHref = item.href.endsWith('/') ? item.href : `${item.href}/`;
+    return normalizedCurrent === normalizedHref;
+  }
+  // For non-exact (like Leistungen), check if path starts with href
+  return currentPath.startsWith(item.href) && currentPath !== base;
+}
 ---
 
 <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm">
@@ -33,9 +45,9 @@ const currentPath = Astro.url.pathname;
           <a
             href={item.href}
             class={`text-sm font-medium transition-colors hover:text-primary ${
-              currentPath === item.href || (item.href !== '/' && currentPath.startsWith(item.href))
+              isActive(item)
                 ? 'text-primary'
-                : 'text-dark-600'
+                : 'text-dark-500'
             }`}
           >
             {item.label}
@@ -74,9 +86,9 @@ const currentPath = Astro.url.pathname;
         <a
           href={item.href}
           class={`block px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
-            currentPath === item.href || (item.href !== '/' && currentPath.startsWith(item.href))
+            isActive(item)
               ? 'bg-primary/10 text-primary'
-              : 'text-dark-600 hover:bg-gray-50'
+              : 'text-dark-500 hover:bg-gray-50'
           }`}
         >
           {item.label}

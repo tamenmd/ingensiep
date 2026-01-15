@@ -7,8 +7,10 @@ import {
   Clock,
   Send,
   MessageSquare,
-  Printer
+  Printer,
+  CheckCircle
 } from 'lucide-astro';
+import { formConfig, company, googleMaps } from '../content/config';
 
 // Ensure base always ends with a slash
 const baseUrl = import.meta.env.BASE_URL;
@@ -24,7 +26,10 @@ const services = [
   { value: 'sonstiges', label: 'Sonstiges' }
 ];
 
-const googleMapsEmbed = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2492.7730777411175!2d6.344890476895478!3d51.33369242106498!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b8ba82845bac75%3A0xb88cb07f9e0ae3a3!2sIngensiep%20%26%20Schallenberg%20GmbH!5e0!3m2!1sde!2sde!4v1749747583498!5m2!1sde!2sde';
+// Formspree URL - Registrieren Sie sich auf formspree.io und ersetzen Sie die ID in src/content/config.ts
+const formAction = formConfig.formspreeId !== 'YOUR_FORMSPREE_ID'
+  ? `https://formspree.io/f/${formConfig.formspreeId}`
+  : '#';
 ---
 
 <Layout
@@ -152,7 +157,7 @@ const googleMapsEmbed = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2
               <h2 class="text-2xl font-bold text-dark">Nachricht senden</h2>
             </div>
 
-            <form class="space-y-6">
+            <form action={formAction} method="POST" class="space-y-6" id="contact-form">
               <div class="grid sm:grid-cols-2 gap-6">
                 <div>
                   <label for="name" class="block text-sm font-medium text-dark mb-2">
@@ -288,7 +293,7 @@ const googleMapsEmbed = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2
       <!-- Google Maps Embed -->
       <div class="rounded-2xl overflow-hidden shadow-lg">
         <iframe
-          src={googleMapsEmbed}
+          src={googleMaps.embedUrl}
           width="100%"
           height="450"
           style="border:0;"
