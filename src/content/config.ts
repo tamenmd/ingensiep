@@ -24,7 +24,7 @@ export const formConfig = {
 
   // Formspree Endpoint (kostenlos für bis zu 50 Anfragen/Monat)
   // Registrieren Sie sich auf formspree.io und ersetzen Sie diese ID
-  formspreeId: 'YOUR_FORMSPREE_ID',
+  formspreeId: 'maqqnvrb',
 };
 
 // =========================================
