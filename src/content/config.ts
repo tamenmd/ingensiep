@@ -100,12 +100,12 @@ export const company = {
  *   - Nicht größer als 500KB sein
  */
 export const hero = {
-  title: 'Professioneller Tankschutz für Ihre Sicherheit',
-  subtitle: 'Ihr Spezialist für Tankreinigung, Tanksanierung und Tankdemontage im Großraum Grefrath, Krefeld und Mönchengladbach. Mit über 20 Jahren Erfahrung garantieren wir höchste Qualität und absolute Zuverlässigkeit.',
+  title: 'Ihr Fachbetrieb für Tankschutz in Krefeld, Grefrath & NRW',
+  subtitle: 'Spezialisiert auf Tankreinigung, Sanierung und Demontage. Seit über 20 Jahren Ihr zuverlässiger Partner in Krefeld, Mönchengladbach und im gesamten Rheinland. WHG-zertifiziert & 24/7 Notdienst.',
   ctaButton: 'Angebot anfordern',
   phoneButton: '02158 / 40 58 777',
   // Hintergrundbild - siehe Anleitung oben
-  backgroundImage: '/img/background_1.jpg',
+  backgroundImage: 'img/background_1.jpg',
   // Deckkraft des Bildes (0.0 = unsichtbar, 1.0 = voll sichtbar) - Standard: 0.2
   backgroundOpacity: 0.2,
 };
@@ -146,7 +146,7 @@ export const stats = [
 // REGIONEN (EINZUGSGEBIET)
 // =========================================
 export const regions = [
-  'Grefrath', 'Krefeld', 'Düsseldorf', 'Duisburg', 'Mönchengladbach', 'Neuss',
+  'Krefeld', 'Grefrath', 'Mönchengladbach', 'Düsseldorf', 'Duisburg', 'Neuss',
   'Moers', 'Viersen', 'Kempen', 'Willich', 'Tönisvorst', 'Kaarst',
   'Meerbusch', 'Ratingen', 'Oberhausen', 'Essen'
 ];
@@ -205,9 +205,9 @@ export const services = [
 export const serviceDetails = {
   tankreinigung: {
     seo: {
-      title: 'Tankreinigung Grefrath | Professionelle Heizöltank Reinigung | IS-Tankschutz',
-      description: 'Professionelle Tankreinigung in Grefrath und Umgebung. Entfernung von Ölschlamm und Ablagerungen, verlängerte Tanklebensdauer. WHG-zertifizierter Fachbetrieb. Jetzt Termin vereinbaren!',
-      keywords: 'Tankreinigung Grefrath, Heizöltank reinigen, Ölschlamm entfernen, Tank säubern, Krefeld, Düsseldorf, Mönchengladbach, NRW',
+      title: 'Tankreinigung Krefeld & Grefrath | Heizöltank professionell reinigen',
+      description: 'Zertifizierte Tankreinigung in Krefeld, Grefrath & Umgebung. Wir entfernen Ölschlamm & schützen Ihre Anlage. 24/7 Notdienst & Festpreise möglich. Jetzt Angebot anfordern!',
+      keywords: 'Tankreinigung Krefeld, Tankreinigung Grefrath, Heizöltank reinigen Kosten, Ölschlamm entsorgen, Tankreinigung Mönchengladbach, Heizölfilter verstopft, Notdienst Heizung',
     },
     heroSubtitle: 'Schützen Sie Ihre Heizungsanlage vor Schäden durch Ablagerungen und Ölschlamm. Unsere professionelle Tankreinigung verlängert die Lebensdauer Ihres Tanks und sichert eine optimale Heizölqualität.',
     benefits: [
@@ -234,9 +234,9 @@ export const serviceDetails = {
   },
   tanksanierung: {
     seo: {
-      title: 'Tanksanierung Grefrath | Professionelle Tankbeschichtung | IS-Tankschutz',
-      description: 'Fachgerechte Tanksanierung und Innenbeschichtung in Grefrath. Bis zu 60% günstiger als Neukauf. WHG-zertifizierter Fachbetrieb mit Garantie. Jetzt beraten lassen!',
-      keywords: 'Tanksanierung Grefrath, Tankbeschichtung, Tankinnenbeschichtung, Tank sanieren, Krefeld, Düsseldorf, Mönchengladbach, NRW',
+      title: 'Tanksanierung & Innenhülle | Krefeld, Mönchengladbach & NRW',
+      description: 'Tanksanierung statt Neukauf: Sparen Sie bis zu 60%. Hochwertige Tankinnenhüllen & Beschichtungen in Krefeld & Umgebung. 15+ Jahre Garantie auf Sanierungen.',
+      keywords: 'Tanksanierung Krefeld, Tankinnenhülle einbauen, Leckschutzauskleidung, Tankbeschichtung, Öltank sanieren Kosten, Tankreparatur NRW, TÜV Mängel beseitigen',
     },
     heroSubtitle: 'Ihr Tank zeigt Alterserscheinungen? Eine Sanierung ist oft die bessere und kostengünstigere Alternative zum Neukauf. Mit unserer hochwertigen Innenbeschichtung machen wir Ihren Tank wieder fit für die Zukunft.',
     benefits: [
@@ -262,9 +262,9 @@ export const serviceDetails = {
   },
   tankdemontage: {
     seo: {
-      title: 'Tankdemontage Grefrath | Öltank fachgerecht entsorgen | IS-Tankschutz',
-      description: 'Professionelle Tankdemontage und Entsorgung in Grefrath. WHG-zertifiziert, alle Formalitäten inklusive. Umweltgerecht und sicher. Jetzt Angebot anfordern!',
-      keywords: 'Tankdemontage Grefrath, Öltank entsorgen, Tank abbauen, Tankentsorgung, Krefeld, Düsseldorf, Mönchengladbach, NRW',
+      title: 'Tankdemontage & Entsorgung Krefeld | Öltank sicher entfernen',
+      description: 'Alten Öltank entsorgen in Krefeld, Grefrath & Region? Wir bieten Demontage zum Festpreis inkl. Entsorgungsnachweis & Behördenabmeldung. Sauber & Schnell.',
+      keywords: 'Tankdemontage Krefeld, Öltank entsorgen Kosten, Heizöltank abbauen, Stahltank zerschneiden, Kellertank entsorgen, Tankentsorgung Mönchengladbach, Batterietanks entsorgen',
     },
     heroSubtitle: 'Sie benötigen Ihren Heizöltank nicht mehr? Wir übernehmen die komplette Demontage – von der Entleerung über den fachgerechten Abbau bis zur umweltgerechten Entsorgung.',
     benefits: [
@@ -292,9 +292,9 @@ export const serviceDetails = {
   },
   tankstilllegung: {
     seo: {
-      title: 'Tankstilllegung Grefrath | Tank stilllegen nach Vorschrift | IS-Tankschutz',
-      description: 'Fachgerechte Tankstilllegung in Grefrath. Ordnungsgemäße Stilllegung nach WHG mit kompletter Dokumentation. Behördenanmeldung inklusive. Jetzt informieren!',
-      keywords: 'Tankstilllegung Grefrath, Tank stilllegen, Tankanlage stilllegen, Krefeld, Düsseldorf, Mönchengladbach, NRW',
+      title: 'Tankstilllegung & Verfüllung | Krefeld, Viersen & Umgebung',
+      description: 'Erdtank oder Kellertank stilllegen? Wir kümmern uns um Reinigung, Verfüllung und die Abmeldung bei der Unteren Wasserbehörde. WHG-Fachbetrieb in Ihrer Nähe.',
+      keywords: 'Tankstilllegung Krefeld, Erdtank stilllegen, Tank verfüllen, Stilllegungsbescheinigung, Tank stilllegen Kosten, AwSV Fachbetrieb',
     },
     heroSubtitle: 'Sie möchten Ihren Heizöltank stilllegen, aber nicht entfernen? Wir führen die ordnungsgemäße Stilllegung nach behördlichen Vorschriften durch – sicher und dokumentiert.',
     benefits: [
@@ -320,9 +320,9 @@ export const serviceDetails = {
   },
   tankneubau: {
     seo: {
-      title: 'Tankneubau Grefrath | Neue Heizöltankanlage | IS-Tankschutz',
-      description: 'Planung und Installation neuer Tankanlagen in Grefrath. Moderne Technik, WHG-konform, kompletter Service. Von der Beratung bis zur Inbetriebnahme. Jetzt anfragen!',
-      keywords: 'Tankneubau Grefrath, Heizöltank neu, Tank installieren, Tankanlage, Krefeld, Düsseldorf, Mönchengladbach, NRW',
+      title: 'Neue Tankanlagen & Installation | Krefeld & Niederrhein',
+      description: 'Planung und Montage moderner Heizöltanks (Doppelwandig, GFK). Wir tauschen Ihre alte Anlage gegen moderne, platzsparende Tanks. Beratung vor Ort.',
+      keywords: 'Neuer Heizöltank Krefeld, Öltank kaufen und einbauen, Doppelwandige Tanks, Roth Tanksysteme, Schütz Tanks, Tankanlage erneuern',
     },
     heroSubtitle: 'Sie benötigen eine neue Tankanlage? Wir planen und installieren moderne Heizöltanks nach aktuellen Vorschriften – von der Beratung über die Montage bis zur Inbetriebnahme.',
     benefits: [
@@ -348,9 +348,9 @@ export const serviceDetails = {
   },
   'lag-wartung': {
     seo: {
-      title: 'LAG-Wartung Grefrath | Leckschutzauskleidung prüfen | IS-Tankschutz',
-      description: 'Professionelle LAG-Wartung in Grefrath. Regelmäßige Prüfung Ihrer Leckschutzauskleidung für maximale Sicherheit. WHG-Fachbetrieb. Jetzt Wartungstermin vereinbaren!',
-      keywords: 'LAG-Wartung Grefrath, Leckschutzauskleidung, LAG Prüfung, Tankwartung, Krefeld, Düsseldorf, Mönchengladbach, NRW',
+      title: 'Leckanzeiger & LAG Wartung | Krefeld, Moers & Umgebung',
+      description: 'Jährliche Funktionsprüfung Ihrer Leckschutzauskleidung und Leckanzeiger. Vermeiden Sie Bußgelder und Umweltschäden. Jetzt Wartungsvertrag anfragen.',
+      keywords: 'LAG Wartung Krefeld, Leckanzeiger piept, Leckschutzauskleidung prüfen, Jahreswartung Öltank, Dichtigkeitsprüfung Tank',
     },
     heroSubtitle: 'Die Leckschutzauskleidung (LAG) ist Ihre Versicherung gegen Umweltschäden. Regelmäßige Wartung stellt sicher, dass im Ernstfall alles funktioniert.',
     benefits: [
@@ -421,7 +421,7 @@ export const googleMaps = {
 // =========================================
 export const seo = {
   siteName: 'Ingensiep & Schallenberg',
-  defaultTitle: 'Ingensiep & Schallenberg | Tankreinigung & Tanksanierung in Grefrath und Umgebung',
-  defaultDescription: 'Ihr zertifizierter Fachbetrieb für Tankreinigung, Tanksanierung und Tankdemontage im Großraum Grefrath, Krefeld, Mönchengladbach. 20+ Jahre Erfahrung, WHG-zertifiziert, 24/7 Notdienst.',
-  defaultKeywords: 'Tankreinigung Grefrath, Tanksanierung Krefeld, Tankdemontage Mönchengladbach, Heizöltank reinigen, Öltank entsorgen, WHG Fachbetrieb',
+  defaultTitle: 'Tankschutz Krefeld, Grefrath & NRW | Ingensiep & Schallenberg',
+  defaultDescription: 'Zertifizierter Fachbetrieb für Tankreinigung, Sanierung & Demontage. Seit 1964 für Sie in Krefeld, Grefrath & Mönchengladbach. 24/7 Notdienst & WHG-Zertifikat.',
+  defaultKeywords: 'Tankschutz Krefeld, Tankreinigung Grefrath, Öltankentsorgung NRW, Tanksanierung Mönchengladbach, Fachbetrieb nach AwSV, Ingensiep Schallenberg',
 };
