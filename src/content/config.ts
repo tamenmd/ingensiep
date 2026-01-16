@@ -105,7 +105,7 @@ export const hero = {
   ctaButton: 'Angebot anfordern',
   phoneButton: '02158 / 40 58 777',
   // Hintergrundbild - siehe Anleitung oben
-  backgroundImage: '/img/background_1.jpg',
+  backgroundImage: '/public/img/background_1.jpg',
   // Deckkraft des Bildes (0.0 = unsichtbar, 1.0 = voll sichtbar) - Standard: 0.2
   backgroundOpacity: 0.2,
 };
