@@ -82,11 +82,32 @@ export const company = {
 // =========================================
 // HERO-BEREICH (STARTSEITE)
 // =========================================
+/**
+ * HINTERGRUNDBILD ANLEITUNG:
+ *
+ * Option 1: Lokales Bild aus dem Projekt verwenden
+ *   - Lege das Bild in den Ordner /public/img/
+ *   - Setze backgroundImage auf: '/img/dein-bild.jpg'
+ *   - Beispiel: '/img/background_1.jpg'
+ *
+ * Option 2: Externes Bild (z.B. Unsplash) verwenden
+ *   - Setze backgroundImage auf die vollständige URL
+ *   - Beispiel: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1920&q=80'
+ *
+ * TIPP: Für beste Performance sollte das Bild:
+ *   - Mindestens 1920px breit sein
+ *   - Im JPG-Format mit 80% Qualität komprimiert sein
+ *   - Nicht größer als 500KB sein
+ */
 export const hero = {
   title: 'Professioneller Tankschutz für Ihre Sicherheit',
   subtitle: 'Ihr Spezialist für Tankreinigung, Tanksanierung und Tankdemontage im Großraum Grefrath, Krefeld und Mönchengladbach. Mit über 20 Jahren Erfahrung garantieren wir höchste Qualität und absolute Zuverlässigkeit.',
   ctaButton: 'Angebot anfordern',
   phoneButton: '02158 / 40 58 777',
+  // Hintergrundbild - siehe Anleitung oben
+  backgroundImage: '/img/background_1.jpg',
+  // Deckkraft des Bildes (0.0 = unsichtbar, 1.0 = voll sichtbar) - Standard: 0.2
+  backgroundOpacity: 0.2,
 };
 
 // =========================================
