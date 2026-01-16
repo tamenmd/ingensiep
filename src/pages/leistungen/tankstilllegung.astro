@@ -8,52 +8,24 @@ import {
   FileCheck,
   AlertCircle
 } from 'lucide-astro';
+import { serviceDetails, company } from '../../content/config';
 
 // Ensure base always ends with a slash
 const baseUrl = import.meta.env.BASE_URL;
 const base = baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`;
 
-const benefits = [
-  'Behördlich anerkannte Stilllegung',
-  'Günstiger als komplette Demontage',
-  'Tank bleibt im Gebäude (bei Bedarf)',
-  'Vollständige Dokumentation',
-  'WHG-konforme Ausführung',
-  'Alle Genehmigungen inklusive'
-];
-
-const process = [
-  {
-    title: 'Entleerung',
-    description: 'Komplette Entfernung des Restheizöls aus dem Tank'
-  },
-  {
-    title: 'Reinigung',
-    description: 'Gründliche Reinigung und Entfernung aller Rückstände'
-  },
-  {
-    title: 'Verfüllung',
-    description: 'Fachgerechte Verfüllung mit zugelassenem Material'
-  },
-  {
-    title: 'Dokumentation',
-    description: 'Erstellung aller Nachweise für Behörden'
-  }
-];
-
-const requirements = [
-  'Vollständige Entleerung des Tanks',
-  'Reinigung von Ölresten und Schlämmen',
-  'Unbrauchbarmachung der Anschlüsse',
-  'Verfüllung oder Entfernung',
-  'Meldung an die zuständige Behörde'
-];
+// Daten aus config.ts
+const details = serviceDetails.tankstilllegung;
+const benefits = details.benefits;
+const process = details.process;
+const requirements = details.requirements;
+const seoData = details.seo;
 ---
 
 <Layout
-  title="Tankstilllegung Krefeld | Heizöltank stilllegen lassen | IS-Tankschutz"
-  description="Professionelle Tankstilllegung in Krefeld und Umgebung. Behördenkonforme Stilllegung Ihres nicht mehr benötigten Heizöltanks. Inklusive aller Dokumente und Genehmigungen."
-  keywords="Tankstilllegung Krefeld, Öltank stilllegen, Tank außer Betrieb nehmen, Heizöltank stillegen, Düsseldorf, Duisburg, NRW"
+  title={seoData.title}
+  description={seoData.description}
+  keywords={seoData.keywords}
 >
   <!-- Hero Section -->
   <section class="bg-gradient-to-br from-dark-950 via-dark-900 to-dark-950 py-20 lg:py-28">
@@ -69,9 +41,7 @@ const requirements = [
             Professionelle <span class="text-primary">Tankstilllegung</span>
           </h1>
           <p class="text-dark-300 text-lg mb-8">
-            Ihr Heizöltank wird nicht mehr benötigt? Wir führen die ordnungsgemäße
-            Stilllegung durch – behördenkonform, sicher und mit allen erforderlichen
-            Nachweisen. Eine wirtschaftliche Alternative zur vollständigen Demontage.
+            {details.heroSubtitle}
           </p>
           <div class="flex flex-col sm:flex-row gap-4">
             <a

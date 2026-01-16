@@ -9,44 +9,24 @@ import {
   Timer,
   PiggyBank
 } from 'lucide-astro';
+import { serviceDetails, company } from '../../content/config';
 
 // Ensure base always ends with a slash
 const baseUrl = import.meta.env.BASE_URL;
 const base = baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`;
 
-const benefits = [
-  'Deutlich günstiger als Neukauf',
-  'Verlängerung der Lebensdauer um 15-25 Jahre',
-  'WHG-konforme Ausführung',
-  'Umweltfreundliche Lösung',
-  'Schnelle Umsetzung ohne Umbauarbeiten',
-  'Vollständige Dokumentation'
-];
-
-const methods = [
-  {
-    title: 'Innenbeschichtung',
-    description: 'Auftrag einer Spezialschicht auf die Tankinnenwand für dauerhaften Korrosionsschutz'
-  },
-  {
-    title: 'Risssanierung',
-    description: 'Fachgerechte Reparatur von Haarrissen und kleinen Beschädigungen'
-  },
-  {
-    title: 'Korrosionsschutz',
-    description: 'Behandlung von Roststellen und Aufbringung schützender Beschichtungen'
-  },
-  {
-    title: 'Anschluss-Erneuerung',
-    description: 'Austausch verschlissener Anschlüsse, Dichtungen und Armaturen'
-  }
-];
+// Daten aus config.ts
+const details = serviceDetails.tanksanierung;
+const benefits = details.benefits;
+const process = details.process;
+const stats = details.stats;
+const seoData = details.seo;
 ---
 
 <Layout
-  title="Tanksanierung Krefeld | Innenbeschichtung & Reparatur | IS-Tankschutz"
-  description="Professionelle Tanksanierung in Krefeld: Innenbeschichtung, Risssanierung und Korrosionsschutz. Günstiger als Neukauf, verlängert die Lebensdauer um bis zu 25 Jahre. WHG-zertifiziert."
-  keywords="Tanksanierung Krefeld, Tankinnenbeschichtung, Tanksanierung Kosten, Heizöltank sanieren, Tankbeschichtung, Düsseldorf, NRW"
+  title={seoData.title}
+  description={seoData.description}
+  keywords={seoData.keywords}
 >
   <!-- Hero Section -->
   <section class="bg-gradient-to-br from-dark-950 via-dark-900 to-dark-950 py-20 lg:py-28">
@@ -62,9 +42,7 @@ const methods = [
             Professionelle <span class="text-primary">Tanksanierung</span>
           </h1>
           <p class="text-dark-300 text-lg mb-8">
-            Ihr Tank zeigt Alterserscheinungen? Mit unserer fachgerechten Tanksanierung und
-            Innenbeschichtung verlängern Sie die Lebensdauer Ihres Tanks um bis zu 25 Jahre –
-            deutlich günstiger als ein Neukauf.
+            {details.heroSubtitle}
           </p>
           <div class="flex flex-col sm:flex-row gap-4">
             <a
@@ -115,18 +93,16 @@ const methods = [
           </p>
 
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
-            <div class="bg-gray-50 rounded-xl p-4 text-center">
-              <PiggyBank class="w-7 h-7 sm:w-8 sm:h-8 text-primary mx-auto mb-2" />
-              <p class="text-xs sm:text-sm font-semibold text-dark">Bis zu 60% günstiger</p>
-            </div>
-            <div class="bg-gray-50 rounded-xl p-4 text-center">
-              <Timer class="w-7 h-7 sm:w-8 sm:h-8 text-primary mx-auto mb-2" />
-              <p class="text-xs sm:text-sm font-semibold text-dark">1-2 Tage Dauer</p>
-            </div>
-            <div class="bg-gray-50 rounded-xl p-4 text-center">
-              <Shield class="w-7 h-7 sm:w-8 sm:h-8 text-primary mx-auto mb-2" />
-              <p class="text-xs sm:text-sm font-semibold text-dark">Garantie inklusive</p>
-            </div>
+            {stats.map((stat, index) => {
+              const icons = [PiggyBank, Timer, Shield];
+              const Icon = icons[index];
+              return (
+                <div class="bg-gray-50 rounded-xl p-4 text-center">
+                  <Icon class="w-7 h-7 sm:w-8 sm:h-8 text-primary mx-auto mb-2" />
+                  <p class="text-xs sm:text-sm font-semibold text-dark">{stat.value} {stat.label}</p>
+                </div>
+              );
+            })}
           </div>
         </div>
 

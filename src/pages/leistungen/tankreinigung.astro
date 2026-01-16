@@ -10,44 +10,25 @@ import {
   Sparkles,
   AlertTriangle
 } from 'lucide-astro';
+import { serviceDetails, company } from '../../content/config';
 
 // Ensure base always ends with a slash
 const baseUrl = import.meta.env.BASE_URL;
 const base = baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`;
 
-const benefits = [
-  'Verlängerung der Tanklebensdauer',
-  'Verbesserung der Heizölqualität',
-  'Vermeidung von Heizungsausfällen',
-  'Schutz vor Korrosionsschäden',
-  'Frühzeitige Schadenserkennung',
-  'Dokumentation für Versicherungen'
-];
-
-const process = [
-  {
-    title: 'Entleerung',
-    description: 'Absaugen des Restöls und der Schlammablagerungen mit Spezialfahrzeug'
-  },
-  {
-    title: 'Reinigung',
-    description: 'Gründliche Innenreinigung des Tanks mit Hochdrucktechnik'
-  },
-  {
-    title: 'Inspektion',
-    description: 'Sichtprüfung auf Risse, Korrosion und Undichtigkeiten'
-  },
-  {
-    title: 'Befüllung',
-    description: 'Rückführung des gereinigten Öls oder Neubefüllung'
-  }
-];
+// Daten aus config.ts
+const details = serviceDetails.tankreinigung;
+const benefits = details.benefits;
+const process = details.process;
+const risks = details.risks;
+const recommendation = details.recommendation;
+const seoData = details.seo;
 ---
 
 <Layout
-  title="Tankreinigung Krefeld | Professionelle Heizöltank Reinigung | IS-Tankschutz"
-  description="Professionelle Tankreinigung in Krefeld und Umgebung. Entfernung von Ölschlamm und Ablagerungen, verlängerte Tanklebensdauer. WHG-zertifizierter Fachbetrieb. Jetzt Termin vereinbaren!"
-  keywords="Tankreinigung Krefeld, Heizöltank reinigen, Ölschlamm entfernen, Tank säubern, Düsseldorf, Duisburg, Mönchengladbach, NRW"
+  title={seoData.title}
+  description={seoData.description}
+  keywords={seoData.keywords}
 >
   <!-- Hero Section -->
   <section class="bg-gradient-to-br from-dark-950 via-dark-900 to-dark-950 py-20 lg:py-28">
@@ -63,9 +44,7 @@ const process = [
             Professionelle <span class="text-primary">Tankreinigung</span>
           </h1>
           <p class="text-dark-300 text-lg mb-8">
-            Schützen Sie Ihre Heizungsanlage vor Schäden durch Ablagerungen und Ölschlamm.
-            Unsere professionelle Tankreinigung verlängert die Lebensdauer Ihres Tanks und
-            sichert eine optimale Heizölqualität.
+            {details.heroSubtitle}
           </p>
           <div class="flex flex-col sm:flex-row gap-4">
             <a
@@ -115,18 +94,16 @@ const process = [
               <div>
                 <h3 class="font-semibold text-dark mb-2">Risiken bei vernachlässigter Tankreinigung:</h3>
                 <ul class="text-dark-600 text-sm space-y-1">
-                  <li>• Verstopfte Filter und Leitungen</li>
-                  <li>• Beschädigung der Brennerdüse</li>
-                  <li>• Korrosion der Tankinnenwand</li>
-                  <li>• Heizungsausfall im Winter</li>
+                  {risks.map((risk) => (
+                    <li>• {risk}</li>
+                  ))}
                 </ul>
               </div>
             </div>
           </div>
 
           <p class="text-dark-500">
-            <strong>Unsere Empfehlung:</strong> Lassen Sie Ihren Tank alle 5-7 Jahre professionell reinigen.
-            Bei älteren Tanks oder sichtbaren Verunreinigungen auch häufiger.
+            <strong>Unsere Empfehlung:</strong> {recommendation}
           </p>
         </div>
 

@@ -9,53 +9,25 @@ import {
   AlertTriangle,
   Calendar
 } from 'lucide-astro';
+import { serviceDetails, company } from '../../content/config';
 
 // Ensure base always ends with a slash
 const baseUrl = import.meta.env.BASE_URL;
 const base = baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`;
 
-const benefits = [
-  'Frühzeitige Erkennung von Leckagen',
-  'Schutz vor Umweltschäden',
-  'Erfüllung gesetzlicher Prüfpflichten',
-  'Verlängerung der Anlagenlebensdauer',
-  'Dokumentation für Behörden',
-  'Kostenersparnis durch Prävention'
-];
-
-const process = [
-  {
-    title: 'Sichtprüfung',
-    description: 'Visuelle Kontrolle der LAG-Auskleidung auf Beschädigungen'
-  },
-  {
-    title: 'Sensortest',
-    description: 'Funktionsprüfung aller Leckanzeigegeräte und Sensoren'
-  },
-  {
-    title: 'Dichtigkeitsprüfung',
-    description: 'Test der Zwischenraum-Dichtigkeit mit zugelassenen Verfahren'
-  },
-  {
-    title: 'Dokumentation',
-    description: 'Erstellung des Prüfprotokolls und ggf. Mängelberichte'
-  }
-];
-
-const checkItems = [
-  'Leckschutzauskleidung (LAG)',
-  'Leckanzeigegeräte',
-  'Überfüllsicherung',
-  'Grenzwertgeber',
-  'Füllstandsanzeige',
-  'Leitungen und Anschlüsse'
-];
+// Daten aus config.ts
+const details = serviceDetails['lag-wartung'];
+const benefits = details.benefits;
+const process = details.process;
+const components = details.components;
+const interval = details.interval;
+const seoData = details.seo;
 ---
 
 <Layout
-  title="LAG-Wartung Krefeld | Leckschutzauskleidung Prüfung | IS-Tankschutz"
-  description="Professionelle LAG-Wartung in Krefeld und Umgebung. Regelmäßige Prüfung Ihrer Leckschutzauskleidung für maximale Sicherheit. WHG-zertifizierter Fachbetrieb."
-  keywords="LAG Wartung Krefeld, Leckschutzauskleidung Prüfung, Tankprüfung, Leckanzeige Wartung, WHG Prüfung, Düsseldorf, NRW"
+  title={seoData.title}
+  description={seoData.description}
+  keywords={seoData.keywords}
 >
   <!-- Hero Section -->
   <section class="bg-gradient-to-br from-dark-950 via-dark-900 to-dark-950 py-20 lg:py-28">
@@ -71,9 +43,7 @@ const checkItems = [
             Professionelle <span class="text-primary">LAG-Wartung</span>
           </h1>
           <p class="text-dark-300 text-lg mb-8">
-            Die Leckschutzauskleidung (LAG) ist ein wichtiges Sicherheitselement Ihrer
-            Tankanlage. Regelmäßige Wartung und Prüfung stellen sicher, dass dieser
-            Schutz zuverlässig funktioniert – für Ihre Sicherheit und die Umwelt.
+            {details.heroSubtitle}
           </p>
           <div class="flex flex-col sm:flex-row gap-4">
             <a
@@ -140,7 +110,7 @@ const checkItems = [
         <div class="bg-gray-50 rounded-2xl p-8">
           <h3 class="text-xl font-bold text-dark mb-6">Was wird geprüft?</h3>
           <ul class="space-y-4">
-            {checkItems.map((item) => (
+            {components.map((item) => (
               <li class="flex items-center gap-3">
                 <CheckCircle class="w-5 h-5 text-primary flex-shrink-0" />
                 <span class="text-dark-600">{item}</span>

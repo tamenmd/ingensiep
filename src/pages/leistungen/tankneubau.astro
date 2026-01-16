@@ -9,63 +9,24 @@ import {
   Ruler,
   Wrench
 } from 'lucide-astro';
+import { serviceDetails, company } from '../../content/config';
 
 // Ensure base always ends with a slash
 const baseUrl = import.meta.env.BASE_URL;
 const base = baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`;
 
-const benefits = [
-  'Individuelle Bedarfsanalyse',
-  'Modernste Tanktechnologie',
-  'Komplettservice von Planung bis Inbetriebnahme',
-  'WHG-konforme Installation',
-  'Alle Genehmigungen inklusive',
-  'Schulung zur Bedienung'
-];
-
-const process = [
-  {
-    title: 'Beratung',
-    description: 'Analyse Ihres Bedarfs und Ihrer räumlichen Gegebenheiten'
-  },
-  {
-    title: 'Planung',
-    description: 'Auswahl des optimalen Tanksystems und Erstellung des Einbauplans'
-  },
-  {
-    title: 'Installation',
-    description: 'Fachgerechte Montage durch unsere geschulten Techniker'
-  },
-  {
-    title: 'Inbetriebnahme',
-    description: 'Prüfung, Dokumentation und Einweisung'
-  }
-];
-
-const tankTypes = [
-  {
-    title: 'Erdtank',
-    description: 'Platzsparende Lösung für die unterirdische Installation im Garten'
-  },
-  {
-    title: 'Kellertank',
-    description: 'Klassische Variante für den Einbau im Heizungskeller'
-  },
-  {
-    title: 'Batterietank',
-    description: 'Flexible Lösung aus mehreren verbundenen Einzeltanks'
-  },
-  {
-    title: 'Doppelwandtank',
-    description: 'Maximale Sicherheit durch integriertes Leckschutzsystem'
-  }
-];
+// Daten aus config.ts
+const details = serviceDetails.tankneubau;
+const benefits = details.benefits;
+const process = details.process;
+const tankTypes = details.tankTypes;
+const seoData = details.seo;
 ---
 
 <Layout
-  title="Tankneubau Krefeld | Neue Tankanlage installieren | IS-Tankschutz"
-  description="Professioneller Tankneubau in Krefeld und Umgebung. Von der Beratung über die Installation bis zur Inbetriebnahme – Komplettservice für Ihre neue Tankanlage. WHG-zertifiziert."
-  keywords="Tankneubau Krefeld, neue Tankanlage, Öltank einbauen, Heizöltank installieren, Tankinstallation, Düsseldorf, NRW"
+  title={seoData.title}
+  description={seoData.description}
+  keywords={seoData.keywords}
 >
   <!-- Hero Section -->
   <section class="bg-gradient-to-br from-dark-950 via-dark-900 to-dark-950 py-20 lg:py-28">
@@ -81,9 +42,7 @@ const tankTypes = [
             Professioneller <span class="text-primary">Tankneubau</span>
           </h1>
           <p class="text-dark-300 text-lg mb-8">
-            Sie planen eine neue Tankanlage? Wir übernehmen die komplette Planung
-            und Installation Ihres neuen Heizöltanks – von der Beratung bis zur
-            Inbetriebnahme. Profitieren Sie von modernster Technik und maximaler Sicherheit.
+            {details.heroSubtitle}
           </p>
           <div class="flex flex-col sm:flex-row gap-4">
             <a

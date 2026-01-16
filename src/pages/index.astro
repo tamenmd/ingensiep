@@ -18,80 +18,46 @@ import {
   Users,
   Calendar
 } from 'lucide-astro';
+import {
+  services as configServices,
+  trustSignals as configTrustSignals,
+  regions,
+  stats,
+  hero,
+  company,
+  googleMaps,
+  seo
+} from '../content/config';
 
 // Ensure base always ends with a slash
 const baseUrl = import.meta.env.BASE_URL;
 const base = baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`;
 
-const services = [
-  {
-    icon: Droplets,
-    title: 'Tankreinigung',
-    description: 'Professionelle Reinigung Ihrer Heizöltanks mit modernster Absaugtechnik für maximale Sicherheit.',
-    href: `${base}leistungen/tankreinigung`
-  },
-  {
-    icon: Wrench,
-    title: 'Tanksanierung',
-    description: 'Fachgerechte Innenbeschichtung und Sanierung beschädigter Tankanlagen nach WHG-Vorgaben.',
-    href: `${base}leistungen/tanksanierung`
-  },
-  {
-    icon: Trash2,
-    title: 'Tankdemontage',
-    description: 'Sichere Demontage und umweltgerechte Entsorgung alter Öltanks durch zertifizierte Fachkräfte.',
-    href: `${base}leistungen/tankdemontage`
-  },
-  {
-    icon: PauseCircle,
-    title: 'Tankstilllegung',
-    description: 'Ordnungsgemäße Stilllegung nicht mehr benötigter Tankanlagen nach behördlichen Vorschriften.',
-    href: `${base}leistungen/tankstilllegung`
-  },
-  {
-    icon: PlusCircle,
-    title: 'Tankneubau',
-    description: 'Planung und Installation neuer Tankanlagen mit modernster Technik und maximaler Effizienz.',
-    href: `${base}leistungen/tankneubau`
-  },
-  {
-    icon: Settings,
-    title: 'LAG-Wartung',
-    description: 'Regelmäßige Wartung und Prüfung Ihrer Leckschutzauskleidung für dauerhaften Schutz.',
-    href: `${base}leistungen/lag-wartung`
-  }
-];
+// Icon-Mapping für Services
+const serviceIcons = {
+  tankreinigung: Droplets,
+  tanksanierung: Wrench,
+  tankdemontage: Trash2,
+  tankstilllegung: PauseCircle,
+  tankneubau: PlusCircle,
+  'lag-wartung': Settings,
+};
 
-const trustSignals = [
-  {
-    icon: Shield,
-    title: 'WHG-Zertifiziert',
-    description: 'Fachbetrieb nach §62 AwSV'
-  },
-  {
-    icon: Award,
-    title: '20+ Jahre Erfahrung',
-    description: 'Kompetenz aus Tradition'
-  },
-  {
-    icon: Clock,
-    title: '24/7 Notdienst',
-    description: 'Immer für Sie da'
-  },
-  {
-    icon: MapPin,
-    title: '100 km Radius',
-    description: 'Grefrath & Umgebung'
-  }
-];
+// Services mit Icons und Links anreichern
+const services = configServices.map(service => ({
+  ...service,
+  icon: serviceIcons[service.slug as keyof typeof serviceIcons],
+  href: `${base}leistungen/${service.slug}`
+}));
 
-const regions = [
-  'Grefrath', 'Krefeld', 'Düsseldorf', 'Duisburg', 'Mönchengladbach', 'Neuss',
-  'Moers', 'Viersen', 'Kempen', 'Willich', 'Tönisvorst', 'Kaarst',
-  'Meerbusch', 'Ratingen', 'Oberhausen', 'Essen'
-];
+// Icon-Mapping für Trust Signals
+const trustIcons = [Shield, Award, Clock, MapPin];
+const trustSignals = configTrustSignals.map((signal, index) => ({
+  ...signal,
+  icon: trustIcons[index]
+}));
 
-const googleMapsEmbed = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2492.7730777411175!2d6.344890476895478!3d51.33369242106498!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b8ba82845bac75%3A0xb88cb07f9e0ae3a3!2sIngensiep%20%26%20Schallenberg%20GmbH!5e0!3m2!1sde!2sde!4v1749747583498!5m2!1sde!2sde';
+const googleMapsEmbed = googleMaps.embedUrl;
 ---
 
 <Layout
@@ -315,22 +281,12 @@ const googleMapsEmbed = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2
 
         <!-- Stats -->
         <div class="grid grid-cols-2 gap-3 sm:gap-6">
-          <div class="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-8 text-center shadow-sm">
-            <div class="text-2xl sm:text-4xl font-extrabold text-primary mb-1 sm:mb-2">20+</div>
-            <p class="text-dark-500 text-xs sm:text-base">Jahre Erfahrung</p>
-          </div>
-          <div class="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-8 text-center shadow-sm">
-            <div class="text-2xl sm:text-4xl font-extrabold text-primary mb-1 sm:mb-2">5.000+</div>
-            <p class="text-dark-500 text-xs sm:text-base">Zufriedene Kunden</p>
-          </div>
-          <div class="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-8 text-center shadow-sm">
-            <div class="text-2xl sm:text-4xl font-extrabold text-primary mb-1 sm:mb-2">100km</div>
-            <p class="text-dark-500 text-xs sm:text-base">Einzugsgebiet</p>
-          </div>
-          <div class="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-8 text-center shadow-sm">
-            <div class="text-2xl sm:text-4xl font-extrabold text-primary mb-1 sm:mb-2">24/7</div>
-            <p class="text-dark-500 text-xs sm:text-base">Notdienst</p>
-          </div>
+          {stats.map((stat) => (
+            <div class="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-8 text-center shadow-sm">
+              <div class="text-2xl sm:text-4xl font-extrabold text-primary mb-1 sm:mb-2">{stat.value}</div>
+              <p class="text-dark-500 text-xs sm:text-base">{stat.label}</p>
+            </div>
+          ))}
         </div>
       </div>
     </div>

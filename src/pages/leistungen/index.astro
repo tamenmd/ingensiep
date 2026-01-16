@@ -12,82 +12,28 @@ import {
   CheckCircle,
   Phone
 } from 'lucide-astro';
+import { services as configServices, faqs } from '../../content/config';
 
 // Ensure base always ends with a slash
 const baseUrl = import.meta.env.BASE_URL;
 const base = baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`;
 
-const services = [
-  {
-    icon: Droplets,
-    title: 'Tankreinigung',
-    slug: 'tankreinigung',
-    description: 'Professionelle Reinigung Ihrer Heizöltanks mit modernster Absaugtechnik. Wir entfernen Ölschlämme, Ablagerungen und Kondenswasser für eine optimale Heizölqualität.',
-    features: ['Schlammabsaugung', 'Innenreinigung', 'Qualitätskontrolle', 'Protokollierung']
-  },
-  {
-    icon: Wrench,
-    title: 'Tanksanierung',
-    slug: 'tanksanierung',
-    description: 'Fachgerechte Innenbeschichtung und Sanierung beschädigter Tankanlagen. Wir reparieren Risse, Korrosionsschäden und erneuern die Tankbeschichtung nach WHG-Vorgaben.',
-    features: ['Innenbeschichtung', 'Risssanierung', 'Korrosionsschutz', 'WHG-konform']
-  },
-  {
-    icon: Trash2,
-    title: 'Tankdemontage',
-    slug: 'tankdemontage',
-    description: 'Sichere Demontage und umweltgerechte Entsorgung alter Öltanks. Unsere zertifizierten Fachkräfte entfernen Ihren Tank fachgerecht und kümmern sich um alle Formalitäten.',
-    features: ['Sichere Entleerung', 'Fachdemontage', 'Entsorgungsnachweis', 'Behördenabnahme']
-  },
-  {
-    icon: PauseCircle,
-    title: 'Tankstilllegung',
-    slug: 'tankstilllegung',
-    description: 'Ordnungsgemäße Stilllegung nicht mehr benötigter Tankanlagen. Wir führen alle erforderlichen Maßnahmen durch und dokumentieren die Stilllegung für die Behörden.',
-    features: ['Entleerung', 'Verfüllung', 'Dokumentation', 'Behördenanmeldung']
-  },
-  {
-    icon: PlusCircle,
-    title: 'Tankneubau',
-    slug: 'tankneubau',
-    description: 'Planung und Installation neuer Tankanlagen mit modernster Technik. Von der Beratung über die Montage bis zur Inbetriebnahme – alles aus einer Hand.',
-    features: ['Bedarfsanalyse', 'Planung', 'Installation', 'Inbetriebnahme']
-  },
-  {
-    icon: Settings,
-    title: 'LAG-Wartung',
-    slug: 'lag-wartung',
-    description: 'Regelmäßige Wartung und Prüfung Ihrer Leckschutzauskleidung (LAG). Wir überprüfen die Funktionsfähigkeit und stellen den dauerhaften Schutz sicher.',
-    features: ['Dichtigkeitsprüfung', 'Sensorcheck', 'Wartungsprotokoll', 'Reparatur']
-  }
-];
+// Icon-Mapping für Services
+const serviceIcons = {
+  tankreinigung: Droplets,
+  tanksanierung: Wrench,
+  tankdemontage: Trash2,
+  tankstilllegung: PauseCircle,
+  tankneubau: PlusCircle,
+  'lag-wartung': Settings,
+};
 
-const faqs = [
-  {
-    question: 'Wie oft sollte eine Tankreinigung durchgeführt werden?',
-    answer: 'Wir empfehlen eine Tankreinigung alle 5-7 Jahre. Bei älteren Tanks oder bei erkennbaren Verunreinigungen des Heizöls kann eine häufigere Reinigung sinnvoll sein. Eine regelmäßige Reinigung verlängert die Lebensdauer Ihres Tanks erheblich.'
-  },
-  {
-    question: 'Was kostet eine Tankreinigung oder Tanksanierung?',
-    answer: 'Die Kosten hängen von verschiedenen Faktoren ab, wie Tankgröße, Verschmutzungsgrad und Zugänglichkeit. Wir erstellen Ihnen gerne ein individuelles, kostenloses Angebot. Kontaktieren Sie uns telefonisch oder über unser Kontaktformular.'
-  },
-  {
-    question: 'Sind Sie ein WHG-zertifizierter Fachbetrieb?',
-    answer: 'Ja, wir sind ein nach § 62 AwSV (ehemals WHG) zertifizierter Fachbetrieb. Diese Zertifizierung ist Voraussetzung für alle Arbeiten an Tankanlagen, die mit wassergefährdenden Stoffen in Berührung kommen.'
-  },
-  {
-    question: 'Wie lange dauert eine Tankdemontage?',
-    answer: 'Eine Tankdemontage dauert in der Regel 1-2 Tage, abhängig von der Größe des Tanks und den örtlichen Gegebenheiten. Nach der Demontage kümmern wir uns um die fachgerechte Entsorgung und alle erforderlichen Behördengänge.'
-  },
-  {
-    question: 'Bieten Sie einen Notdienst an?',
-    answer: 'Ja, wir bieten einen 24/7 Notdienst für dringende Fälle wie Ölaustritt oder akute Tankschäden. Rufen Sie uns im Notfall jederzeit unter 02158 / 40 58 777 an.'
-  },
-  {
-    question: 'In welchen Regionen sind Sie tätig?',
-    answer: 'Wir bedienen von Grefrath aus den gesamten Großraum im Umkreis von 100 km. Dazu gehören Krefeld, Düsseldorf, Duisburg, Mönchengladbach, Neuss, Moers, Viersen und viele weitere Städte in NRW.'
-  }
-];
+// Services mit Icons anreichern
+const services = configServices.map(service => ({
+  ...service,
+  icon: serviceIcons[service.slug as keyof typeof serviceIcons],
+  description: service.fullDescription,
+}));
 ---
 
 <Layout

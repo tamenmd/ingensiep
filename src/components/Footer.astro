@@ -1,6 +1,7 @@
 ---
 import Logo from './Logo.astro';
 import { Phone, Mail, MapPin, Clock } from 'lucide-astro';
+import { company, regions } from '../content/config';
 
 // Ensure base always ends with a slash
 const baseUrl = import.meta.env.BASE_URL;
@@ -41,22 +42,22 @@ const base = baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`;
           <li class="flex items-start gap-3">
             <MapPin class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
             <span class="text-dark-300 text-sm">
-              Ingensiep & Schallenberg GmbH<br />
-              Industriestr. 2a<br />
-              47929 Grefrath
+              {company.name}<br />
+              {company.address.street}<br />
+              {company.address.zip} {company.address.city}
             </span>
           </li>
           <li class="flex items-start gap-3">
             <Phone class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
             <div class="text-sm">
-              <a href="tel:+4921584058777" class="text-dark-300 hover:text-primary transition-colors block">02158 / 40 58 777</a>
-              <a href="tel:+4921517903706" class="text-dark-400 hover:text-primary transition-colors block text-xs">02151 / 79 03 706 (Krefeld)</a>
-              <a href="tel:+4921669293930" class="text-dark-400 hover:text-primary transition-colors block text-xs">02166 / 92 93 930 (Mönchengladbach)</a>
+              <a href={`tel:${company.phone.mainFormatted}`} class="text-dark-300 hover:text-primary transition-colors block">{company.phone.main}</a>
+              <a href={`tel:${company.phone.krefeldFormatted}`} class="text-dark-400 hover:text-primary transition-colors block text-xs">{company.phone.krefeld} (Krefeld)</a>
+              <a href={`tel:${company.phone.moenchengladbachFormatted}`} class="text-dark-400 hover:text-primary transition-colors block text-xs">{company.phone.moenchengladbach} (Mönchengladbach)</a>
             </div>
           </li>
           <li class="flex items-center gap-3">
             <Mail class="w-5 h-5 text-primary flex-shrink-0" />
-            <a href="mailto:info@is-tankschutz.de" class="text-dark-300 hover:text-primary transition-colors text-sm">info@is-tankschutz.de</a>
+            <a href={`mailto:${company.email}`} class="text-dark-300 hover:text-primary transition-colors text-sm">{company.email}</a>
           </li>
         </ul>
       </div>
@@ -68,15 +69,15 @@ const base = baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`;
           <li class="flex items-start gap-3">
             <Clock class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
             <div class="text-dark-300 text-sm">
-              <p class="font-medium text-white">Mo - Do: 9:00 - 15:00</p>
-              <p class="font-medium text-white">Fr: 9:00 - 13:30</p>
-              <p class="mt-1">Notdienst 24/7 erreichbar</p>
+              <p class="font-medium text-white">{company.openingHours.weekdays}</p>
+              <p class="font-medium text-white">{company.openingHours.friday}</p>
+              <p class="mt-1">{company.openingHours.emergency}</p>
             </div>
           </li>
         </ul>
         <div class="mt-6 p-4 bg-primary/10 rounded-lg border border-primary/20">
           <p class="text-sm text-primary font-medium">Notfall-Hotline</p>
-          <a href="tel:+4921584058777" class="text-lg font-bold text-white hover:text-primary transition-colors">02158 / 40 58 777</a>
+          <a href={`tel:${company.phone.mainFormatted}`} class="text-lg font-bold text-white hover:text-primary transition-colors">{company.phone.main}</a>
         </div>
       </div>
     </div>
@@ -84,7 +85,7 @@ const base = baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`;
     <!-- Einzugsgebiet -->
     <div class="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-dark-800">
       <p class="text-dark-400 text-xs sm:text-sm text-center leading-relaxed">
-        <span class="font-medium text-dark-300 block sm:inline mb-1 sm:mb-0">Unser Einzugsgebiet:</span> Grefrath, Krefeld, Düsseldorf, Duisburg, Mönchengladbach, Neuss, Moers, Viersen, Kempen, Willich, Tönisvorst und Umgebung (100 km Radius)
+        <span class="font-medium text-dark-300 block sm:inline mb-1 sm:mb-0">Unser Einzugsgebiet:</span> {regions.join(', ')} und Umgebung (100 km Radius)
       </p>
     </div>
   </div>

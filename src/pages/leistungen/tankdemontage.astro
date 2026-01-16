@@ -9,44 +9,24 @@ import {
   Recycle,
   HardHat
 } from 'lucide-astro';
+import { serviceDetails, company } from '../../content/config';
 
 // Ensure base always ends with a slash
 const baseUrl = import.meta.env.BASE_URL;
 const base = baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`;
 
-const benefits = [
-  'Fachgerechte und sichere Demontage',
-  'Umweltgerechte Entsorgung aller Materialien',
-  'Vollständige Dokumentation und Nachweise',
-  'Behördenabnahme und Stilllegungsbescheinigung',
-  'Schnelle und saubere Durchführung',
-  'Komplettservice aus einer Hand'
-];
-
-const process = [
-  {
-    title: 'Vorbereitung',
-    description: 'Restentleerung des Tanks und Absaugung aller Ölrückstände'
-  },
-  {
-    title: 'Reinigung',
-    description: 'Gründliche Innenreinigung zur Vorbereitung der Demontage'
-  },
-  {
-    title: 'Demontage',
-    description: 'Fachgerechter Ausbau des Tanks und aller Anschlüsse'
-  },
-  {
-    title: 'Entsorgung',
-    description: 'Umweltgerechte Entsorgung mit Nachweis'
-  }
-];
+// Daten aus config.ts
+const details = serviceDetails.tankdemontage;
+const benefits = details.benefits;
+const process = details.process;
+const included = details.included;
+const seoData = details.seo;
 ---
 
 <Layout
-  title="Tankdemontage Krefeld | Öltank entsorgen & ausbauen | IS-Tankschutz"
-  description="Professionelle Tankdemontage in Krefeld und Umgebung. Sichere Entleerung, fachgerechter Ausbau und umweltgerechte Entsorgung Ihres Heizöltanks. Inklusive Behördenabnahme."
-  keywords="Tankdemontage Krefeld, Öltank entsorgen, Tank ausbauen, Tankentsorgung, Heizöltank demontieren, Düsseldorf, Duisburg, NRW"
+  title={seoData.title}
+  description={seoData.description}
+  keywords={seoData.keywords}
 >
   <!-- Hero Section -->
   <section class="bg-gradient-to-br from-dark-950 via-dark-900 to-dark-950 py-20 lg:py-28">
@@ -62,9 +42,7 @@ const process = [
             Professionelle <span class="text-primary">Tankdemontage</span>
           </h1>
           <p class="text-dark-300 text-lg mb-8">
-            Sie stellen auf Gas, Fernwärme oder Wärmepumpe um? Wir kümmern uns um die
-            sichere Demontage und umweltgerechte Entsorgung Ihres alten Heizöltanks –
-            schnell, sauber und mit allen erforderlichen Nachweisen.
+            {details.heroSubtitle}
           </p>
           <div class="flex flex-col sm:flex-row gap-4">
             <a
@@ -204,15 +182,15 @@ const process = [
           <div class="flex items-start gap-4 p-6 bg-gray-50 rounded-xl">
             <FileCheck class="w-6 h-6 text-primary flex-shrink-0 mt-1" />
             <div>
-              <h3 class="font-semibold text-dark mb-1">Fotodokumentation</h3>
-              <p class="text-dark-500 text-sm">Bilder vor, während und nach der Demontage</p>
+              <h3 class="font-semibold text-dark mb-1">Arbeitsbericht</h3>
+              <p class="text-dark-500 text-sm">Detaillierte Aufstellung aller durchgeführten Arbeiten</p>
             </div>
           </div>
           <div class="flex items-start gap-4 p-6 bg-gray-50 rounded-xl">
             <FileCheck class="w-6 h-6 text-primary flex-shrink-0 mt-1" />
             <div>
-              <h3 class="font-semibold text-dark mb-1">Arbeitsbericht</h3>
-              <p class="text-dark-500 text-sm">Detaillierte Aufstellung aller durchgeführten Arbeiten</p>
+              <h3 class="font-semibold text-dark mb-1">Behördliche Abmeldung</h3>
+              <p class="text-dark-500 text-sm">Stilllegungsmeldung bei der zuständigen Behörde</p>
             </div>
           </div>
         </div>

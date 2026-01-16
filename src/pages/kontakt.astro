@@ -70,14 +70,14 @@ const formAction = formConfig.formspreeId !== 'YOUR_FORMSPREE_ID'
               </div>
               <div>
                 <h3 class="font-semibold text-dark mb-1">Telefon</h3>
-                <a href="tel:+4921584058777" class="text-dark-500 hover:text-primary transition-colors block">
-                  02158 / 40 58 777 <span class="text-dark-400 text-sm">(Grefrath)</span>
+                <a href={`tel:${company.phone.mainFormatted}`} class="text-dark-500 hover:text-primary transition-colors block">
+                  {company.phone.main} <span class="text-dark-400 text-sm">(Grefrath)</span>
                 </a>
-                <a href="tel:+4921517903706" class="text-dark-500 hover:text-primary transition-colors block text-sm">
-                  02151 / 79 03 706 <span class="text-dark-400">(Krefeld)</span>
+                <a href={`tel:${company.phone.krefeldFormatted}`} class="text-dark-500 hover:text-primary transition-colors block text-sm">
+                  {company.phone.krefeld} <span class="text-dark-400">(Krefeld)</span>
                 </a>
-                <a href="tel:+4921669293930" class="text-dark-500 hover:text-primary transition-colors block text-sm">
-                  02166 / 92 93 930 <span class="text-dark-400">(Mönchengladbach)</span>
+                <a href={`tel:${company.phone.moenchengladbachFormatted}`} class="text-dark-500 hover:text-primary transition-colors block text-sm">
+                  {company.phone.moenchengladbach} <span class="text-dark-400">(Mönchengladbach)</span>
                 </a>
               </div>
             </div>
@@ -88,7 +88,7 @@ const formAction = formConfig.formspreeId !== 'YOUR_FORMSPREE_ID'
               </div>
               <div>
                 <h3 class="font-semibold text-dark mb-1">Fax</h3>
-                <p class="text-dark-500">02158 / 40 82 617</p>
+                <p class="text-dark-500">{company.phone.fax}</p>
               </div>
             </div>
 
@@ -98,8 +98,8 @@ const formAction = formConfig.formspreeId !== 'YOUR_FORMSPREE_ID'
               </div>
               <div>
                 <h3 class="font-semibold text-dark mb-1">E-Mail</h3>
-                <a href="mailto:info@is-tankschutz.de" class="text-dark-500 hover:text-primary transition-colors">
-                  info@is-tankschutz.de
+                <a href={`mailto:${company.email}`} class="text-dark-500 hover:text-primary transition-colors">
+                  {company.email}
                 </a>
                 <p class="text-sm text-dark-400 mt-1">Antwort innerhalb 24h</p>
               </div>
@@ -112,9 +112,9 @@ const formAction = formConfig.formspreeId !== 'YOUR_FORMSPREE_ID'
               <div>
                 <h3 class="font-semibold text-dark mb-1">Adresse</h3>
                 <p class="text-dark-500">
-                  Ingensiep & Schallenberg GmbH<br />
-                  Industriestr. 2a<br />
-                  47929 Grefrath
+                  {company.name}<br />
+                  {company.address.street}<br />
+                  {company.address.zip} {company.address.city}
                 </p>
               </div>
             </div>
@@ -126,9 +126,9 @@ const formAction = formConfig.formspreeId !== 'YOUR_FORMSPREE_ID'
               <div>
                 <h3 class="font-semibold text-dark mb-1">Öffnungszeiten</h3>
                 <p class="text-dark-500">
-                  Mo - Do: 9:00 - 15:00 Uhr<br />
-                  Fr: 9:00 - 13:30 Uhr<br />
-                  <span class="text-primary font-medium">Notdienst: 24/7</span>
+                  {company.openingHours.weekdays}<br />
+                  {company.openingHours.friday}<br />
+                  <span class="text-primary font-medium">{company.openingHours.emergency}</span>
                 </p>
               </div>
             </div>
@@ -141,11 +141,11 @@ const formAction = formConfig.formspreeId !== 'YOUR_FORMSPREE_ID'
               Bei Ölaustritt oder anderen Notfällen erreichen Sie uns rund um die Uhr.
             </p>
             <a
-              href="tel:+4921584058777"
+              href={`tel:${company.phone.mainFormatted}`}
               class="inline-flex items-center gap-2 bg-white text-primary px-4 py-2 rounded-lg font-semibold text-sm hover:bg-gray-100 transition-colors"
             >
               <Phone class="w-4 h-4" />
-              02158 / 40 58 777
+              {company.phone.main}
             </a>
           </div>
         </div>
