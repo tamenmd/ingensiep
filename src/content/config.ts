@@ -375,7 +375,7 @@ export const faqs = [
   },
   {
     question: 'Wie lange dauert eine Tankdemontage?',
-    answer: 'Eine Tankdemontage dauert in der Regel 1-2 Tage, abhängig von der Größe des Tanks und den örtlichen Gegebenheiten. Nach der Demontage kümmern wir uns um die fachgerechte Entsorgung und alle erforderlichen Behördengänge.',
+    answer: 'Eine Tankdemontage dauert in der Regel 127 Tage, abhängig von der Größe des Tanks und den örtlichen Gegebenheiten. Nach der Demontage kümmern wir uns um die fachgerechte Entsorgung und alle erforderlichen Behördengänge.',
   },
   {
     question: 'Bieten Sie einen Notdienst an?',
