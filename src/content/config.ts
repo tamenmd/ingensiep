@@ -87,8 +87,8 @@ export const company = {
  *
  * Option 1: Lokales Bild aus dem Projekt verwenden
  *   - Lege das Bild in den Ordner /public/img/
- *   - Setze backgroundImage auf: '/img/dein-bild.jpg'
- *   - Beispiel: '/img/background_1.jpg'
+ *   - Setze backgroundImage auf: 'img/dein-bild.jpg'
+ *   - Beispiel: 'img/background_1.jpg'
  *
  * Option 2: Externes Bild (z.B. Unsplash) verwenden
  *   - Setze backgroundImage auf die vollständige URL
@@ -105,7 +105,7 @@ export const hero = {
   ctaButton: 'Angebot anfordern',
   phoneButton: '02158 / 40 58 777',
   // Hintergrundbild - siehe Anleitung oben
-  backgroundImage: 'img/background_1.jpg',
+  backgroundImage: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1920&q=80',
   // Deckkraft des Bildes (0.0 = unsichtbar, 1.0 = voll sichtbar) - Standard: 0.2
   backgroundOpacity: 0.2,
 };
