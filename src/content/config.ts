@@ -33,7 +33,7 @@ export const formConfig = {
 export const company = {
   name: 'Ingensiep & Schallenberg GmbH & Co. KG',
   shortName: 'INGENSIEP & SCHALLENBERG',
-  tagline: 'Seit 1964 für Sicherheit und Umweltschutz',
+  tagline: 'Seit 1964 für Sicherheit und Umweltschutz TEST',
 
   // Adresse
   address: {
