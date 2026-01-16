@@ -101,7 +101,7 @@ export const company = {
  */
 export const hero = {
   title: 'Ihr Fachbetrieb für Tankschutz in Krefeld, Grefrath & NRW',
-  subtitle: 'Spezialisiert auf Tankreinigung, Sanierung und Demontage. Seit über 20 Jahren Ihr zuverlässiger Partner in Krefeld, Mönchengladbach und im gesamten Rheinland. WHG-zertifiziert & 24/7 Notdienst.',
+  subtitle: 'Spezialisiert auf Tankreinigung, Sanierung und Demontage. Seit über 60 Jahren Ihr zuverlässiger Partner in Krefeld, Mönchengladbach und im gesamten Rheinland. WHG-zertifiziert & 24/7 Notdienst.',
   ctaButton: 'Angebot anfordern',
   phoneButton: '02158 / 40 58 777',
   // Hintergrundbild - siehe Anleitung oben
