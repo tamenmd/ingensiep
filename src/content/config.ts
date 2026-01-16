@@ -33,11 +33,11 @@ export const formConfig = {
 export const company = {
   name: 'Ingensiep & Schallenberg GmbH & Co. KG',
   shortName: 'INGENSIEP & SCHALLENBERG',
-  tagline: 'Seit 1964 für Sicherheit und Umweltschutz TEST',
+  tagline: 'Seit 1964 für Sicherheit und Umweltschutz',
 
   // Adresse
   address: {
-    street: 'Industriestr. 2a',
+    street: 'Industriestr. 2 a',
     zip: '47929',
     city: 'Grefrath',
     country: 'Deutschland',
